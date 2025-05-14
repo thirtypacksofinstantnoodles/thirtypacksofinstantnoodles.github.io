@@ -25,19 +25,12 @@
 	</article>
 	<h4 style="text-align:center;">
 	  <form>
-	    <label for="ramenitem2"> Tonkotsu Ramen-RM26.90</label>
-	    <input type="number" id="ramenitem2" name="ramenitem2" value="Tonkotsu Ramen">
-	    <button onclick="toggleMenu()">Add to cart</button>
-  	    <div id="checkboxMenu">
-              <label class="checkbox-item"><input type="checkbox" name="ramenaddon1"> +Shoyu Tamago-RM3.00</label>
-              <label class="checkbox-item"><input type="checkbox" name="ramenaddon2"> +Fishcake-RM1.50</label>
-            </div>
-          <script>
-            function toggleMenu() {
-            const menu = document.getElementById('checkboxMenu');
-            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-                                  }
-          </script>
+	    <label for="ramenitem1"> Miso Ramen-RM24.90</label>
+	    <input type="number" id="ramenitem1" name="ramenitem1" value="Miso Ramen"><br>
+  	    <input type="checkbox" id="ramenaddon1" name="ramenaddon1" value="Shoyu Tamago">
+  	    <label for="ramenaddon1"> +Shoyu Tamago-RM3.00</label><br>
+  	    <input type="checkbox" id="ramenaddon2" name="ramenaddon2" value="Fishcake">
+ 	    <label for="ramenaddon2"> +Fishcake-RM1.50</label><br>
 	  </form>
 	  <form>
 	    <label for="ramenitem2"> Tonkotsu Ramen-RM26.90</label>
