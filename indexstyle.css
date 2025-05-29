@@ -1,5 +1,5 @@
 .shadow {
-  text-align: center;
+  text-align: center !important;
   text-shadow: 0px 0px 5px yellow, 0px -5px 5px red;
 }
 .center-img {
