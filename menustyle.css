@@ -1,11 +1,9 @@
-h1{
+h1 {
   background-image: url("food/instantnoodlecover.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-}
-h1{
   text-align: center;
   color: red;
 }
