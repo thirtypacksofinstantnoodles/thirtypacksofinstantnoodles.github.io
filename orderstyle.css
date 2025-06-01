@@ -1,0 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to right, #ff6a00, #ee0979, #7e00c4);
+  background-attachment: fixed;
+}
