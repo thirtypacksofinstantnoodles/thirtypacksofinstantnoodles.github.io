@@ -1,8 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background: linear-gradient(to right, #ffecd2, #fcb69f, #c2e9fb);
-  background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 .shadow {
   text-align: center;
   text-shadow: 0px 0px 5px yellow, 0px -5px 5px red;
