@@ -1,1 +1,27 @@
-
+p, h1, h3 {
+                      font-family: Arial, sans-serif;
+                  }
+      h2 {
+                      text-align: center;
+                  }
+                  body {
+                    padding: 0px;
+                    margin: 40px;
+                  }
+                  h1 {
+                    text-align: center;
+                    color: rgb(00, 00, 00) !important;
+                  }
+                  .page {
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                  }
+                  .center {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 50%;
+                  }
