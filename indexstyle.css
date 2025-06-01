@@ -1,5 +1,7 @@
 body {
   background: linear-gradient(to right, #ffecd2, #fcb69f, #c2e9fb);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .shadow {
   text-align: center;
