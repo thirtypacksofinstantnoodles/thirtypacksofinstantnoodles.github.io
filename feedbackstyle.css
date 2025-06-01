@@ -1,3 +1,12 @@
 a:hover{
   color:tomato;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to right, #fdfbfb, #ebedee, #d7e1ec);
+  background-attachment: fixed;
+}
