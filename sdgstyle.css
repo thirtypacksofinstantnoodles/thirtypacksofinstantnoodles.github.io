@@ -1,3 +1,12 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #2c7744, #a8e063);
+  background-attachment: fixed;
+}
 p, h1, h3 {
                       font-family: Arial, sans-serif;
                   }
