@@ -63,17 +63,17 @@
           <input type="number" id="Unit number" name="apartment_details" value=""><br>
       </fieldset>
         <br>
-      <input list="payment" id="method" name="method">
-        <datalist id="payment">
-        <option value="Cash">
-        <option value="Credit/Debit">
-        <option value="Apple Pay">
-        <option value="TNG">
-        <option value="Maybank 2 U">
-        <option value="Paypal">
-        <option value="Wise">
-        <option value="Boost">
-      </datalist>
+      <select name="payment" id="payment">
+        <option value="">Please choose an option to pay</option>
+        <option value="1">Cash</option>
+        <option value="2">Credit/Debit</option>
+        <option value="3">Apple Pay</option>
+        <option value="4">TNG</option>
+        <option value="5">Maybank 2 U</option>
+        <option value="5">Paypal</option>
+        <option value="6">Wise</option>
+        <option value="7">Boost</option>
+      </select>
         <br>
         <div>
           <input type="button" onclick="alert('Order Complete!')" value="Submit Order">
