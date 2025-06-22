@@ -22,7 +22,8 @@
       </h2>
     </header>
     <main>
-      <form>
+      <fieldset>
+        <legend>Personal Details</legend>
         <div>
           <label for="fname">First Name:</label>
           <input type="text" id="fname" name="fname" placeholder="JJ">
@@ -39,7 +40,9 @@
         </div>
         <br>
         <div>
-          <p>Property Type: </p>
+      </fieldset>
+      <fieldset>
+          <legend>Property type</legend>
           <input type="radio" id="house" name="property_type" value="house">
           <label for="house">House</label><br>
           <label for="street number">Street Number: </label><br>
@@ -58,10 +61,10 @@
           <input type="number" id="block number" name="apartment_details" value=""><br>
           <label for="unit number">Unit Number:</label><br>
           <input type="number" id="Unit number" name="apartment_details" value=""><br>
-        </div>
+      </fieldset>
         <br>
-        <div>
-          <p>Payment Method: </p>
+        <fieldset>
+          <legend>Payment method</legend>
           <input type="radio" id="cash" name="payment method" value="">
           <label for="cash">Cash</label><br>
           <input type="radio" id="credit/debit" name="payment method" value="">
@@ -80,7 +83,7 @@
           <label for="wise">Wise</label><br>
           <input type="radio" id="boost" name="payment method" value="">
           <label for="boost">Boost</label><br>
-        </div>
+        </fieldset>
         <br>
         <div>
           <input type="button" onclick="alert('Order Complete!')" value="Submit Order">
