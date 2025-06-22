@@ -63,27 +63,17 @@
           <input type="number" id="Unit number" name="apartment_details" value=""><br>
       </fieldset>
         <br>
-        <fieldset>
-          <legend>Payment method</legend>
-          <input type="radio" id="cash" name="payment method" value="">
-          <label for="cash">Cash</label><br>
-          <input type="radio" id="credit/debit" name="payment method" value="">
-          <label for="credit/debit">Credit/Debit Card</label><br>
-          <input type="number" id="credit/debit" name="credit/debit" placeholder="0123456789012345"<br><br>
-          <input type="radio" id="apple" name="payment method" value="">
-          <label for="apple">Apple Pay</label><br>
-          <input type="radio" id="tng" name="payment method" value="">
-          <label for="tng">TNG</label><br>
-          <input type="number" id="tng" name="tng" placeholder="+60"<br><br>
-          <input type="radio" id="may" name="payment method" value="">
-          <label for="may">Maybank 2 U</label><br>
-          <input type="radio" id="pay" name="payment method" value="">
-          <label for="pay">Paypal</label><br>
-          <input type="radio" id="wise" name="payment method" value="">
-          <label for="wise">Wise</label><br>
-          <input type="radio" id="boost" name="payment method" value="">
-          <label for="boost">Boost</label><br>
-        </fieldset>
+      <input list="payment" id="method" name="method">
+        <datalist id="payment">
+        <option value="Cash">
+        <option value="Credit/Debit">
+        <option value="Apple Pay">
+        <option value="TNG">
+        <option value="Maybank 2 U">
+        <option value="Paypal">
+        <option value="Wise">
+        <option value="Boost">
+      </datalist>
         <br>
         <div>
           <input type="button" onclick="alert('Order Complete!')" value="Submit Order">
