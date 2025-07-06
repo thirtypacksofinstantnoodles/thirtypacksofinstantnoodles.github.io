@@ -32,3 +32,13 @@ h1 {
   text-align: center;
   color: red;
 }
+
+.border-left {
+  text-align: left;
+  border-left: 6px solid red;
+}
+
+.border-right {
+  text-align: right;
+  border-right: 6px solid red;
+}
