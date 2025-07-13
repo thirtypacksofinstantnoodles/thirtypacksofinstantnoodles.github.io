@@ -33,7 +33,7 @@ h1 {
   color: red;
 }
 
-.border-left {
+.left-border {
   text-align: left;
   border-left: 6px solid red;
   display: block;
@@ -41,7 +41,7 @@ h1 {
   padding: 10px;
 }
 
-.border-right {
+.right-border {
   text-align: right;
   border-right: 6px solid red;
   display: block;
