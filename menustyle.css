@@ -34,11 +34,11 @@ h1 {
 }
 
 .border-left {
-  text-align: left;
+  text-align: left !important;
   border-left: 6px solid red;
 }
 
 .border-right {
-  text-align: right;
+  text-align: right !important;
   border-right: 6px solid red;
 }
