@@ -34,7 +34,7 @@ h1 {
 }
 
 .border-left {
-  float: left;
+  text-align: left;
   border-left: 6px solid red;
   display: block;
   width: 100%;
@@ -42,7 +42,7 @@ h1 {
 }
 
 .border-right {
-  float: right;
+  text-align: right;
   border-right: 6px solid red;
   display: block;
   width: 100%;
