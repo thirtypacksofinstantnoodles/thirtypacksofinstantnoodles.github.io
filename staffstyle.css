@@ -23,3 +23,12 @@ body {
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
   background-attachment: fixed;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering */
+}
+
