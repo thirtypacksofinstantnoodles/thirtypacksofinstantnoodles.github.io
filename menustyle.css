@@ -34,11 +34,17 @@ h1 {
 }
 
 .border-left {
-  text-align: left !important;
+  text-align: left;
   border-left: 6px solid red;
+  display: block;
+  width: 100%;
+  padding: 10px;
 }
 
 .border-right {
-  text-align: right !important;
+  text-align: right;
   border-right: 6px solid red;
+  display: block;
+  width: 100%;
+  padding: 10px;
 }
