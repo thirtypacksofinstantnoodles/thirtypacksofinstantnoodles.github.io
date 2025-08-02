@@ -83,4 +83,37 @@
       <small>Copyright &copy; 2025</small><br>
     </footer>
   </body>
+
+// this is the database
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBtJnZ7ZK8JW1FH6gd1SPKJoJXJMSgzpM4",
+    authDomain: "instant-noodles-a8c7d.firebaseapp.com",
+    projectId: "instant-noodles-a8c7d",
+    storageBucket: "instant-noodles-a8c7d.firebasestorage.app",
+    messagingSenderId: "785588231065",
+    appId: "1:785588231065:web:17f9866a7e7960613a1108",
+    measurementId: "G-T6L1X7NGGD"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  import {getDatabase, set, get, update, remove, ref, child}
+  from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js"
+
+  const db = getDatabase();
+
+  var comments = document.querySelector("#comments");
+</script>
+// database end
 </html>
