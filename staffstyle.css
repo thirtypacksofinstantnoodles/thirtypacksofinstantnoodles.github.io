@@ -26,7 +26,10 @@ body {
 }
 
 .center-img {
-  display: block;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.center-img img {
   width: 50%;
 }
