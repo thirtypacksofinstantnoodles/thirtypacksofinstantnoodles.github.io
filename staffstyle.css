@@ -40,3 +40,36 @@ body {
 .center-img img {
   width: 50%;
 }
+
+.staff-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.staff-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.staff-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.staff-card h2 {
+  margin-top: 15px;
+}
+
+.staff-card h4 {
+  font-weight: normal;
+  font-size: 14px;
+  text-align: justify;
+}
