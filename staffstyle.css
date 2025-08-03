@@ -27,6 +27,11 @@ body {
   text-align: center;
 }
 
+  article h2, article h4 {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 .center-img {
   display: flex;
   justify-content: center;
