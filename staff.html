@@ -3,7 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <title>Our Staff</title>
-  <link rel="stylesheet" href="staffstyle.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+      background-attachment: fixed;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 5px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000;
+      background-color: #fff;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    h1, h3 {
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .staff-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .staff-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .staff-card article {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .staff-card h2 {
+      margin: 10px 0 5px;
+    }
+
+    .staff-card h4 {
+      font-weight: normal;
+      font-size: 14px;
+      text-align: justify;
+    }
+
+    footer {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -16,242 +94,161 @@
     <a href="feedback.html">Contact Us!</a>
   </nav>
 
-  <h1 style="text-align:center;">Our Staff</h1>
-  <header>
-    <h3 style="text-align:center;">
-      Our staff are extremely well-trained individuals who have mastered their cooking.
-      In case you don't believe us, here are the education backgrounds of our experienced team.
-    </h3>
-  </header>
+  <h1>Our Staff</h1>
+  <h3>Our staff are extremely well-trained individuals who have mastered their cooking. <br>Here are the education backgrounds of our experienced team.</h3>
 
   <main>
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrpang.png" alt="A portrait of Mr Pang" />
-      </figure>
+    <!-- All Staff Cards Below -->
+
+    <section class="staff-card">
+      <img src="staff/mrpang.png" alt="Mr Pang">
       <article>
         <h2><u>Mr Pang</u></h2>
-        <h4>
-          Mr Pang is the founder of Thirty Packs of Instant Noodles and has been with the company since its founding in 1940.
-          Even though he never attended culinary school, he has over 85 years of kitchen experience. His passion for instant noodles started in childhood, after eating thirty packs — inspiring the name of the restaurant.
-        </h4>
+        <h4>Founder of Thirty Packs of Instant Noodles. Over 85 years of kitchen experience. Passion for instant noodles started in childhood.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrjun.png" alt="A portrait of Mr Jun" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrjun.png" alt="Mr Jun">
       <article>
         <h2><u>Mr Jun</u></h2>
-        <h4>
-          Mr Jun is our supportive, kind, award-winning executive chef. He graduated from both Harvard University and Le Cordon Bleu.
-          With 50+ years of experience, he’s collaborated with top chefs like Uncle Kyle.
-        </h4>
+        <h4>Executive chef. Harvard and Le Cordon Bleu graduate. 50+ years of experience. Worked with Uncle Kyle.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrjie.png" alt="A portrait of Mr Jie" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrjie.png" alt="Mr Jie">
       <article>
         <h2><u>Mr Jie</u></h2>
-        <h4>
-          Head sous chef Mr Jie trained at Le Cordon Bleu and brings 30+ years of culinary expertise. His love for instant noodles began in childhood.
-        </h4>
+        <h4>Head sous chef. Trained at Le Cordon Bleu. 30+ years of culinary expertise. Instant noodle lover since childhood.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrteoh.png" alt="A portrait of Mr Teoh" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrteoh.png" alt="Mr Teoh">
       <article>
         <h2><u>Mr Teoh</u></h2>
-        <h4>
-          Mr Teoh is the head of marketing. A graduate of M.I.T., he helped grow our customer base to billions worldwide.
-        </h4>
+        <h4>Head of marketing. M.I.T. graduate. Helped grow customer base to billions worldwide.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrlaquarius.png" alt="A portrait of Mr Laquarius" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrlaquarius.png" alt="Mr Laquarius">
       <article>
         <h2><u>Mr Laquarius Tyrone Francis</u></h2>
-        <h4>
-          Mr Laquarius is our head financial advisor. A graduate of M.I.T. and Harvard, he kept us thriving through crises like COVID-19, 2008, and the Great Depression.
-        </h4>
+        <h4>Head financial advisor. M.I.T. and Harvard graduate. Kept us thriving through major crises.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrcent.png" alt="A portrait of Mr Cent" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrcent.png" alt="Mr Cent">
       <article>
         <h2><u>Mr Cent</u></h2>
-        <h4>
-          Prodigy chef and head trainee, Mr Cent graduated from America’s Elite Culinary Institute and has trained over 6,000 chefs in our franchises.
-        </h4>
+        <h4>Prodigy chef. Graduate of America's Elite Culinary Institute. Trained over 6,000 chefs.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrtan.png" alt="A portrait of Mr Tan" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrtan.png" alt="Mr Tan">
       <article>
         <h2><u>Mr Tan</u></h2>
-        <h4>
-          Mr Tan is our head chef and a Le Cordon Bleu graduate. With 20+ years of experience, he helps chefs develop advanced culinary skills.
-        </h4>
+        <h4>Head chef. Le Cordon Bleu graduate. 20+ years experience. Trains chefs in advanced skills.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/joodle.png" alt="A drawing of Joodle" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/joodle.png" alt="Joodle">
       <article>
-        <h2>><u>Joodle</u></h2>
-        <h4>
-          Joodle is our beloved mascot, cheering up children and spreading joy since 1940. Created from a dream by Mr Pang, Joodle embodies our spirit.
-        </h4>
+        <h2><u>Joodle</u></h2>
+        <h4>Beloved mascot since 1940. Created from a dream by Mr Pang. Spreads joy and happiness.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/Mr Derren.jpg" alt="A portrait of Mr Derren" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/Mr Derren.jpg" alt="Mr Derren">
       <article>
         <h2><u>Mr Derren</u></h2>
-        <h4>
-          Billionaire philanthropist Mr Derren promotes the brand worldwide and contributes to global charity projects representing the franchise.
-        </h4>
+        <h4>Billionaire philanthropist. Promotes the brand worldwide and supports global charity projects.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrtalia.png" alt="A portrait of Mr Talia" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrtalia.png" alt="Mr Talia">
       <article>
-        <h2>><u>Mr Talia</u></h2>
-        <h4>
-          Assistant head trainee chef and Culinary Institute of America graduate. Mr Talia has helped train over 4,000 chefs worldwide.
-        </h4>
+        <h2><u>Mr Talia</u></h2>
+        <h4>Assistant head trainee chef. Graduate of Culinary Institute of America. Helped train 4,000 chefs.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrhabib.png" alt="A portrait of Mr Habib" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrhabib.png" alt="Mr Habib">
       <article>
         <h2><u>Mr Habib</u></h2>
-        <h4>
-          Head waiter and graduate of Butler Academy Institute. Mr Habib has trained over 20,000 waiters worldwide since 1950.
-        </h4>
+        <h4>Head waiter. Graduate of Butler Academy Institute. Trained 20,000 waiters since 1950.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrstim.png" alt="A portrait of Mr Stim" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrstim.png" alt="Mr Stim">
       <article>
-        <h2>><u>Mr Stim</u></h2>
-        <h4>
-          Head trainee waiter and 30-year veteran. Mr Stim trained over 40,000 staff and also graduated from Butler Academy Institute.
-        </h4>
+        <h2><u>Mr Stim</u></h2>
+        <h4>Head trainee waiter. 30-year veteran. Trained 40,000+ staff. Butler Academy Institute graduate.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrsviddea.png" alt="A portrait of Mrs Viddea" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrsviddea.png" alt="Mrs Viddea">
       <article>
         <h2><u>Mrs Viddea</u></h2>
-        <h4>
-          Head janitor with 7+ years of experience. Mrs Viddea ensures world-class cleanliness. Graduate of Han Chiang University College of Communication.
-        </h4>
+        <h4>Head janitor. 7+ years experience. Han Chiang University graduate. Ensures world-class cleanliness.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrsandrea.png" alt="A portrait of Mrs Andrea" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrsandrea.png" alt="Mrs Andrea">
       <article>
-        <h2>><u>Mrs Andrea</u></h2>
-        <h4>
-          Head dishwasher. A graduate of Han Chiang University, Mrs Andrea trains staff to handle high-volume dishwashing with efficiency and care.
-        </h4>
+        <h2><u>Mrs Andrea</u></h2>
+        <h4>Head dishwasher. Han Chiang University graduate. Trains dishwashing staff for high efficiency.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrrichard.png" alt="A portrait of Mr Richard" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrrichard.png" alt="Mr Richard">
       <article>
         <h2><u>Mr Richard</u></h2>
-        <h4>
-          Head cashier with 40 years of experience. Graduate of Stanford University, he mentors all our cashiers across the world.
-        </h4>
+        <h4>Head cashier. 40 years experience. Stanford graduate. Mentors cashiers worldwide.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrstalled.png" alt="A portrait of Mr Stalled" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrstalled.png" alt="Mr Stalled">
       <article>
-        <h2>><u>Mr Stalled</u></h2>
-        <h4>
-          Assistant head cashier and Cambridge University graduate. With 15 years of experience, he’s trained thousands of franchise cashiers.
-        </h4>
+        <h2><u>Mr Stalled</u></h2>
+        <h4>Assistant head cashier. Cambridge graduate. 15 years of experience. Trained thousands.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrho.png" alt="A portrait of Mr Ho" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrho.png" alt="Mr Ho">
       <article>
         <h2><u>Mr Ho</u></h2>
-        <h4>
-          Head manager. A Harvard graduate with 70+ years of service, Mr Ho oversees company operations and strategic growth.
-        </h4>
+        <h4>Head manager. Harvard graduate. 70+ years of service. Oversees company operations.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/mrshoe.png" alt="A portrait of Mrs Hoe" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/mrshoe.png" alt="Mrs Hoe">
       <article>
-        <h2>><u>Mrs Hoe</u></h2>
-        <h4>
-          Assistant head manager. M.I.T. alumna with over 10 years of experience, helping streamline efficiency company-wide.
-        </h4>
+        <h2><u>Mrs Hoe</u></h2>
+        <h4>Assistant head manager. M.I.T. alumna. Over 10 years experience streamlining efficiency.</h4>
       </article>
     </section>
 
-    <section>
-      <figure class="center-img">
-        <img src="staff/jjco.png" alt="JJ.co’s logo" />
-      </figure>
+    <section class="staff-card">
+      <img src="staff/jjco.png" alt="JJ.co">
       <article>
         <h2><u>JJ.co</u></h2>
-        <h4>
-          JJ.co is a billion-dollar farming company and long-term supplier for our franchise, delivering fresh and organic produce for over 80 years.
-        </h4>
+        <h4>Billion-dollar farming company. Supplier for over 80 years. Provides fresh, organic produce.</h4>
       </article>
     </section>
   </main>
