@@ -25,7 +25,8 @@ body {
   text-align: center;
 }
 
-img {
+.center-img {
   display: block;
   margin: auto;
+  width: 50%;
 }
