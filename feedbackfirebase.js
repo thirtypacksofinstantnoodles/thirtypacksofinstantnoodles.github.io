@@ -1,75 +1,54 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+// Import the db object from firebaseinit.js
+import { db } from "./firebaseinit.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBtJnZ7ZK8JW1FH6gd1SPKJoJXJMSgzpM4",
-  authDomain: "instant-noodles-a8c7d.firebaseapp.com",
-  projectId: "instant-noodles-a8c7d",
-  storageBucket: "instant-noodles-a8c7d.firebasestorage.app",
-  messagingSenderId: "785588231065",
-  appId: "1:785588231065:web:17f9866a7e7960613a1108",
-  measurementId: "G-T6L1X7NGGD"
-};
+// Get a reference to the checkout button
+const checkoutButton = document.getElementById('checkout-button');
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-console.log("Firebase initialized", app);
-
-// Get a reference to the form
-const feedbackForm = document.querySelector('form'); // Or use getElementById if your form has an ID
-
-// Add a submit event listener to the form
-feedbackForm.addEventListener('submit', (event) => {
-  // Prevent the default form submission
-  event.preventDefault();
-
-  // Collect form data
-  const helpWithOptions = feedbackForm.querySelectorAll('input[name="help"]');
-  let helpWith = '';
-  for (const radio of helpWithOptions) {
-    if (radio.checked) {
-      helpWith = radio.value;
-      break;
+// Add a click event listener to the checkout button
+checkoutButton.addEventListener('click', async () => {
+  // Get cart items from the DOM
+  const cartItemsElement = document.getElementById('cart-items');
+  const cartItems = [];
+  cartItemsElement.querySelectorAll('li').forEach(itemElement => {
+    // Extract item details from the list item text (you might need to adjust this based on your li format)
+    const text = itemElement.textContent.trim();
+    // Basic parsing - you might need a more robust approach depending on your list item structure
+    const match = text.match(/(.+)\sx(\d+)\s-\sRM(\d+\.\d{2})/);
+    if (match) {
+      const name = match[1].trim();
+      const quantity = parseInt(match[2]);
+      const price = parseFloat(match[3]);
+      cartItems.push({ name, quantity, price });
     }
+  });
+
+  // Get total price from the DOM
+  const totalPriceElement = document.getElementById('total-price');
+  const totalPrice = parseFloat(totalPriceElement.textContent);
+
+  if (cartItems.length === 0) {
+    alert("Your cart is empty. Please add items before checking out.");
+    return;
   }
 
-  const reasonOptions = feedbackForm.querySelectorAll('input[name="reason"]');
-  let reason = '';
-  for (const radio of reasonOptions) {
-    if (radio.checked) {
-      reason = radio.value;
-      break;
-    }
-  }
-
-  const comments = feedbackForm.querySelector('#comments').value;
-  const name = feedbackForm.querySelector('#name').value;
-  const phoneNumber = feedbackForm.querySelector('#pnumber').value;
-  const email = feedbackForm.querySelector('#email').value;
-
-  // Create an object with the form data
-  const formData = {
-    helpWith: helpWith,
-    reason: reason,
-    comments: comments,
-    name: name,
-    phoneNumber: phoneNumber,
-    email: email,
+  // Create an object with the order data
+  const orderData = {
+    items: cartItems,
+    totalPrice: totalPrice,
     timestamp: new Date() // Add a timestamp
   };
 
-  // Save data to Firestore
-  addDoc(collection(db, "feedback"), formData)
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
-      // Optionally, clear the form after submission
-      feedbackForm.reset();
-      alert("Thank you for your feedback!");
-    })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-      alert("There was an error submitting your feedback. Please try again.");
-    });
+  try {
+    // Save order data to Firestore
+    const docRef = await addDoc(collection(db, "order"), orderData);
+    console.log("Order document written with ID: ", docRef.id);
+
+    // Optionally, provide feedback to the user (you might clear the cart display in ordercart.js)
+    alert("Thank you for your order!");
+
+  } catch (error) {
+    console.error("Error adding order document: ", error);
+    alert("There was an error placing your order. Please try again.");
+  }
 });
