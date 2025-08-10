@@ -17,3 +17,8 @@ nav a:hover {
 * {
   box-sizing: border-box;
 }
+body  {  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+  background-attachment: fixed;
+  text-align: center;
+}
+}
