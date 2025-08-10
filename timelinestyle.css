@@ -9,6 +9,7 @@ nav a {
   color: #000;
   background-color: #fff;
   transition: background-color 0.2s ease, color 0.2s ease;
+  justify-content:center;
 }
 
 nav a:hover {
