@@ -1,84 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
-  <head>
-    <title>
-      Feedback
-    </title>
-    <nav>
-      <a href="index.html">About Us</a>
-			<a href="menu.html">Our menu</a>
-			<a href="sdg.html">Sdg's</a>
-			<a href="timeline.html">Restaurant Timeline</a>
-			<a href="staff.html">Our Staff</a>
-			<a href="order.html">Order Now!</a>
-			<a href="feedback.html">Contact Us!</a>
-    </nav>
-    <link rel="stylesheet" href="feedbackstyle.css">
-    <h1>We appreciate your feedback!</h1>
-  </head>
-  <body>
-    <header>
-      <h3>Whether you have questions, feedback, or comments about something you like, we'd love to hear from you! Share your experience with us or reach out for customer support!</h3>
-    </header>
-    <main>
-      <form>
+<head>
+  <meta charset="utf-8">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="feedbackstyle.css">
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">About Us</a>
+    <a href="menu.html">Our menu</a>
+    <a href="sdg.html">Sdg's</a>
+    <a href="timeline.html">Restaurant Timeline</a>
+    <a href="staff.html">Our Staff</a>
+    <a href="order.html">Order Now!</a>
+    <a href="feedback.html">Contact Us!</a>
+  </nav>
+
+  <h1>We appreciate your feedback!</h1>
+
+  <header>
+    <h3>Whether you have questions, feedback, or comments about something you like, we'd love to hear from you! Share your experience with us or reach out for customer support!</h3>
+  </header>
+
+  <main>
+    <form>
       <section>
         <fieldset>
-	  <legend>What can we help you with?</legend>
-          <input type="radio" name="help" value="like" id="something I really like"><label>There's something I really like.</label><br>
-	  <input type="radio" name="help" value="question" id="I have a question"><label>I have a question</label><br>
-	  <input type="radio" name="help" value="unhappy" id="something not happy with"><label>There's something I'm not happy with.</label><br>
-	  <input type="radio" name="help" value="concern" id="serious concern would like reviewed"><label>I have a serious concern I would like reviewed.</label><br>
-	  <input type="radio" name="help" value="feedback" id="following up on feedback"><label>I'm following up on prior feedback.</label><br>
-	</fieldset>
-      </section>
-      <br>
-      <section>
-        <fieldset>
-	  <legend>What is your reason for contacting us?</legend>
-	  <input type="radio" name="reason" value="food" id="food"><label>Food.</label><br>
-	  <input type="radio" name="reason" value="service" id="service"><label>Service.</label><br>
-	  <input type="radio" name="reason" value="staff" id="staff"><label>Staff.</label><br>
-	  <input type="radio" name="reason" value="cleanliness" id="cleanliness"><label>Cleanliness.</label><br>
-	  <input type="radio" name="reason" value="catering" id="catering"><label>Catering.</label><br>
+          <legend>What can we help you with?</legend>
+          <input type="radio" name="help" value="like" id="something I really like">
+          <label>There's something I really like.</label><br>
+
+          <input type="radio" name="help" value="question" id="I have a question">
+          <label>I have a question</label><br>
+
+          <input type="radio" name="help" value="unhappy" id="something not happy with">
+          <label>There's something I'm not happy with.</label><br>
+
+          <input type="radio" name="help" value="concern" id="serious concern would like reviewed">
+          <label>I have a serious concern I would like reviewed.</label><br>
+
+          <input type="radio" name="help" value="feedback" id="following up on feedback">
+          <label>I'm following up on prior feedback.</label><br>
         </fieldset>
       </section>
+
       <br>
+
+      <section>
+        <fieldset>
+          <legend>What is your reason for contacting us?</legend>
+          <input type="radio" name="reason" value="food" id="food">
+          <label>Food.</label><br>
+
+          <input type="radio" name="reason" value="service" id="service">
+          <label>Service.</label><br>
+
+          <input type="radio" name="reason" value="staff" id="staff">
+          <label>Staff.</label><br>
+
+          <input type="radio" name="reason" value="cleanliness" id="cleanliness">
+          <label>Cleanliness.</label><br>
+
+          <input type="radio" name="reason" value="catering" id="catering">
+          <label>Catering.</label><br>
+        </fieldset>
+      </section>
+
+      <br>
+
       <section>
         <h4>Your comments, suggestions, and/or questions.</h4>
         <textarea id="comments" name="comments" rows="4" cols="50">Your comments, suggestions, and/or questions.</textarea>
       </section>
+
       <br>
+
       <section>
         <fieldset>
-	  <legend>Your personal details</legend>
+          <legend>Your personal details</legend>
           <div>
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="JJ Pang">
-            <br>
+            <input type="text" id="name" name="name" placeholder="JJ Pang"><br>
           </div>
+
           <div>
             <label for="pnumber">Phone Number:</label>
-            <input type="tel" id="pnumber" name="pnumber" placeholder="+60">
-            <br>
+            <input type="tel" id="pnumber" name="pnumber" placeholder="+60"><br>
           </div>
+
           <div>
-            <label for="email"> Email Address:</label>
-            <input type="email" id="email" name="email" placeholder="abc@example.com"
-	    <br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="abc@example.com"><br>
           </div>
         </fieldset>
       </section>
+
       <br>
+
       <section>
-          <input type="submit" value="Submit">
+        <input type="submit" value="Submit">
       </section>
-      </form>
-    </main>
-    <footer>
-      <small>Copyright &copy; 2025</small><br>
-    </footer>
-    <script type="module" src="./feedbackfirebase.js"></script>
-  </body>	
+    </form>
+  </main>
+
+  <footer>
+    <small>Copyright &copy; 2025</small><br>
+  </footer>
+
+  <script type="module" src="./feedbackfirebase.js"></script>
+
+</body>
 </html>
