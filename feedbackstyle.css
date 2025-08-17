@@ -14,6 +14,13 @@ nav a {
 nav a:hover {
   background-color: #000;
   color: #fff;
+}
+
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+  
 html, body {
   height: 100%;
   margin: 0;
