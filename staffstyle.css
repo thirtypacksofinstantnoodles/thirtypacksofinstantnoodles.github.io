@@ -1,109 +1,135 @@
-/* Base Reset and Typography */
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
+body { 
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e); 
+  background-attachment: fixed; 
+  margin: 0; 
+  font-family: Arial, sans-serif; 
+} 
+nav { 
+  text-align: center; 
+  margin: 20px 0; 
+} 
+nav a { 
+  display: inline-block; 
+  padding: 8px 16px; 
+  margin: 5px; 
+  border: 1px solid #000; 
+  border-radius: 5px; 
+  text-decoration: none; 
+  color: #000; 
+  background-color: #fff; 
+  transition: background-color 0.2s ease, color 0.2s ease; 
+} 
+nav a:hover { 
+  background-color: #000; 
+  color: #fff; 
+} 
+h1, h3 { 
+  text-align: center; 
+} 
+main { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  padding: 40px 20px; 
+} 
+.staff-card { 
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  width: 300px; 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column; 
+} 
+.staff-card img { 
+  width: 100%; 
+  height: 300px; 
+  object-fit: cover; 
+} 
+.staff-card article { 
+  padding: 15px; 
+  text-align: center; 
+} 
+.staff-card h2 { 
+  margin: 10px 0 5px;
+} 
+.staff-card h4 { 
+  font-weight: normal; 
+  font-size: 14px; 
+  text-align: center; 
+} 
+footer { 
+  text-align: center; 
+  margin: 30px 0; 
+  font-size: 14px; 
+} 
+nav { 
   text-align: center;
-}
-
-/* Background Styling */
-body {
-  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-  background-attachment: fixed;
-}
-
-/* Navigation Styles */
-nav {
-  text-align: center;
-  margin: 20px 0;
-}
-
-nav a {
-  display: inline-block;
-  padding: 8px 16px;
-  margin: 5px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #000;
-  background-color: #fff;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-nav a:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-/* Headings */
-h1, h3 {
-  text-align: center;
-}
-
-/* Centered Image Section */
-.center-img {
-  display: flex;
-  justify-content: center;
-}
-
-.center-img img {
-  width: 50%;
-}
-
-/* Main Section Layout */
-main {
-  padding: 40px 20px;
-}
-
-/* Staff Row Layout (if used) */
-.staff-row {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin: 40px 0;
-}
-
-/* Staff Card Styling */
-.staff-card {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.staff-card img {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.staff-card h2 {
-  margin: 15px 0 5px;
-}
-
-.staff-card h4 {
-  font-weight: normal;
-  font-size: 14px;
-  text-align: justify;
-}
-
-/* Article Text Alignment */
-article h2, article h4 {
-  text-align: center;
-  max-width: 700px;
+  margin: 20px 0; 
+} 
+nav a { 
+  display: inline-block; 
+  padding: 8px 16px; 
+  margin: 5px; 
+  border: 1px solid #000; 
+  border-radius: 5px; 
+  text-decoration: none; 
+  font-family: Arial, sans-serif; 
+  color: #000; 
+  background-color: #fff; 
+  transition: background-color 0.2s ease, color 0.2s ease; 
+} 
+nav a:hover { 
+  background-color: #000; 
+  color: #fff; 
+} 
+html, body { 
+  height: 100%; 
+  margin: 0; 
+} 
+body { 
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e); 
+  background-attachment: fixed; 
+  text-align: center; 
+} 
+article h2, article h4 { 
+  text-align: center; 
+  max-width: 700px; 
   margin: 0 auto;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  margin: 30px 0;
-  font-size: 14px;
+} 
+.center-img { 
+  display: flex; 
+  justify-content: center; 
+} 
+.center-img img { 
+  width: 50%; 
+} 
+.staff-row { 
+  display: flex; 
+  justify-content: center; 
+  gap: 30px; 
+  flex-wrap: wrap; 
+  margin: 40px 0; 
+} 
+.staff-card { 
+  background: white; 
+  border-radius: 10px; 
+  padding: 20px; 
+  width: 300px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  text-align: center; 
+} 
+.staff-card img {
+  width: 100%; 
+  border-radius: 10px; 
+  object-fit: cover; 
+} 
+.staff-card h2 { 
+  margin-top: 15px;
+} 
+.staff-card h4 { 
+  font-weight: normal; 
+  font-size: 14px; 
+  text-align: justify; 
 }
