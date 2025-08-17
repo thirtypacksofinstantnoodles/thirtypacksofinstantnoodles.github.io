@@ -50,16 +50,21 @@ h1, h3 {
   width: 50%;
 }
 
-/* Staff Section */
-main, .staff-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+/* Main Section Layout */
+main {
   padding: 40px 20px;
-  margin: 0 auto;
 }
 
+/* Staff Row Layout (if used) */
+.staff-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+/* Staff Card Styling */
 .staff-card {
   background: white;
   border-radius: 10px;
@@ -89,7 +94,7 @@ main, .staff-row {
   text-align: justify;
 }
 
-/* Article Styling */
+/* Article Text Alignment */
 article h2, article h4 {
   text-align: center;
   max-width: 700px;
