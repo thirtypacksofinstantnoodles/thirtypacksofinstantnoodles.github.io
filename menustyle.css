@@ -49,3 +49,11 @@ h1 {
   width: 100%;
   padding: 10px;
 }
+
+.left-image {
+  float: left;
+}
+
+.right-image {
+  float: right;
+}
