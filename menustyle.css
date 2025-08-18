@@ -35,26 +35,28 @@ h1 {
   color: red;
 }
 
-.left-border {
-  text-align: left;
-  display: block;
-  width: 100%;
-  padding: 10px;
-}
-
-.right-border {
-  text-align: right;
-  display: block;
-  width: 100%;
-  padding: 10px;
-}
-
 .left-image {
   float: left;
   border-left: 6px solid red;
+  margin-right: 20px;
 }
 
 .right-image {
   float: right;
   border-right: 6px solid red;
+  margin-left: 20px;
+}
+
+.left-border {
+  text-align: left;
+}
+
+.right-border {
+  text-align: right;
+}
+
+figure::after {
+  content: "";
+  display: table;
+  clear: both;
 }
