@@ -54,10 +54,14 @@ checkoutButton.addEventListener('click', async () => {
 
   // Create an object with the order data
   const orderData = {
-    items: cartItems,
-    totalPrice: totalPrice,
+    items: cartItems, // Restore the original structure
+
+    totalPrice: totalPrice, // Keep the total price as is
     timestamp: new Date() // Add a timestamp
   };
+
+  // For clarity, you could also add a separate field for the total number of items
+  orderData.totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   try {
     // Save order data to Firestore
