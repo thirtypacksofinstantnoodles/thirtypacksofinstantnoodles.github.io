@@ -1,25 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sleek Info Reveal</title>
+  <meta charset="utf-8">
+  <title>Our SDG's</title>
+  <link rel="stylesheet" href="sdgstyle.css">
   <style>
     body {
       background-color: #121212; /* black background */
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: flex-start; /* align items to the left */
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      padding-left: 20px; /* space from the left edge */
+      padding: 0;
     }
 
+    /* Navigation bar styling */
+    nav {
+      background-color: #1e1e1e;
+      padding: 15px;
+      text-align: center; /* center the nav items */
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff9800;
+    }
+
+    /* Card container below nav */
     .card-container {
       display: flex;
-      gap: 40px; /* <-- increased spacing between cards */
+      gap: 40px; /* space between cards */
       flex-wrap: wrap;
+      justify-content: flex-start; /* align to left */
+      padding: 20px; /* padding from edges */
     }
 
     .card {
@@ -50,7 +69,7 @@
     }
 
     .info.open {
-      max-height: 200px; /* enough for your text */
+      max-height: 200px;
       padding: 15px;
     }
 
@@ -62,6 +81,18 @@
 </head>
 <body>
 
+  <!-- Navigation bar stays top center -->
+  <nav>
+    <a href="index.html">About Us</a>
+    <a href="menu.html">Our Menu</a>
+    <a href="sdg.html">SDG's</a>
+    <a href="timeline.html">Restaurant Timeline</a>
+    <a href="staff.html">Our Staff</a>
+    <a href="order.html">Order Now!</a>
+    <a href="feedback.html">Contact Us!</a>
+  </nav>
+
+  <!-- Cards aligned left below nav -->
   <div class="card-container">
     <div class="card" onclick="toggleInfo(this)">
       <img src="https://via.placeholder.com/300x200" alt="Sleek Image 1">
