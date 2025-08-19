@@ -32,3 +32,21 @@ html, body {
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
+
+details {
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+details[open] {
+  background: #eef;
+}
