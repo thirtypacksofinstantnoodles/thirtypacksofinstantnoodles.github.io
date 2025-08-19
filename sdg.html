@@ -65,4 +65,65 @@
     .info {
       max-height: 0;
       overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0 15px;
+    }
+
+    .info.open {
+      max-height: 500px; /* larger since it’s full width */
+      padding: 15px;
+    }
+
+    .info p {
+      margin: 0;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar stays top center -->
+  <nav>
+    <a href="index.html">About Us</a>
+    <a href="menu.html">Our Menu</a>
+    <a href="sdg.html">SDG's</a>
+    <a href="timeline.html">Restaurant Timeline</a>
+    <a href="staff.html">Our Staff</a>
+    <a href="order.html">Order Now!</a>
+    <a href="feedback.html">Contact Us!</a>
+  </nav>
+
+  <!-- Cards stacked vertically and full width -->
+  <div class="card-container">
+    <div class="card" onclick="toggleInfo(this)">
+      <img src="https://via.placeholder.com/1200x400" alt="Sleek Image 1">
+      <div class="info">
+        <p>This is some information about the first image. Click again to hide.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleInfo(this)">
+      <img src="https://via.placeholder.com/1200x400" alt="Sleek Image 2">
+      <div class="info">
+        <p>This is some information about the second image. Click again to hide.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleInfo(this)">
+      <img src="https://via.placeholder.com/1200x400" alt="Sleek Image 3">
+      <div class="info">
+        <p>This is some information about the third image. Click again to hide.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(card) {
+      const info = card.querySelector('.info');
+      info.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
 
