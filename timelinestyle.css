@@ -52,3 +52,10 @@ nav a:hover {
   margin-left: auto;
   text-align: right;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+}
