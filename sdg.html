@@ -17,9 +17,6 @@
       background-color: #1e1e1e;
       padding: 15px;
       text-align: center; /* center the nav items */
-      position: sticky; /* keeps nav visible while scrolling */
-      top: 0;
-      z-index: 10;
     }
 
     nav a {
@@ -39,14 +36,15 @@
       display: flex;
       flex-direction: column; /* stack top to bottom */
       gap: 40px; /* space between cards */
-      padding: 20px;
+      padding: 20px; /* padding from edges */
+      align-items: flex-start; /* align to left */
     }
 
     .card {
       background-color: #1e1e1e;
       border-radius: 12px;
       overflow: hidden;
-      width: 100%; /* full width */
+      width: 300px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
       cursor: pointer;
       color: white;
@@ -54,7 +52,7 @@
     }
 
     .card:hover {
-      transform: scale(1.01);
+      transform: scale(1.02);
     }
 
     .card img {
@@ -70,13 +68,13 @@
     }
 
     .info.open {
-      max-height: 500px; /* larger since it’s full width */
+      max-height: 200px;
       padding: 15px;
     }
 
     .info p {
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -93,24 +91,24 @@
     <a href="feedback.html">Contact Us!</a>
   </nav>
 
-  <!-- Cards stacked vertically and full width -->
+  <!-- Cards stacked vertically -->
   <div class="card-container">
     <div class="card" onclick="toggleInfo(this)">
-      <img src="https://via.placeholder.com/1200x400" alt="Sleek Image 1">
+      <img src="https://via.placeholder.com/300x200" alt="Sleek Image 1">
       <div class="info">
         <p>This is some information about the first image. Click again to hide.</p>
       </div>
     </div>
 
     <div class="card" onclick="toggleInfo(this)">
-      <img src="https://via.placeholder.com/1200x400" alt="Sleek Image 2">
+      <img src="https://via.placeholder.com/300x200" alt="Sleek Image 2">
       <div class="info">
         <p>This is some information about the second image. Click again to hide.</p>
       </div>
     </div>
 
     <div class="card" onclick="toggleInfo(this)">
-      <img src="https://via.placeholder.com/1200x400" alt="Sleek Image 3">
+      <img src="https://via.placeholder.com/300x200" alt="Sleek Image 3">
       <div class="info">
         <p>This is some information about the third image. Click again to hide.</p>
       </div>
@@ -126,4 +124,3 @@
 
 </body>
 </html>
-
