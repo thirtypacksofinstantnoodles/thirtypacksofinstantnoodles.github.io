@@ -23,3 +23,19 @@ nav a:hover {
   background-color: #000;
   color: #fff;
 }
+
+.container-left {
+  text-align: left;
+}
+
+.container-right {
+  text-align: right;
+}
+
+.content {
+  border-style: solid;
+  border-width: 5px;
+  border-color: red;
+  background-color: #7d8796;
+  color: blue;
+}
