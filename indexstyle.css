@@ -3,7 +3,6 @@ nav {
   margin: 20px 0;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-
 }
 
 nav a {
@@ -18,7 +17,6 @@ nav a {
   transition: background-color 0.2s ease, color 0.2s ease;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-
 }
 
 nav a:hover {
@@ -26,5 +24,11 @@ nav a:hover {
   color: #fff;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+}
 
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
