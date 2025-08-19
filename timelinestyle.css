@@ -26,17 +26,20 @@ nav a:hover {
 
 .container-left .content,
 .container-right .content {
-  max-width: 500px;
+  border: 5px solid red;
+  background-color: #7d8796;
+  color: blue;
+  padding: 20px;
+  width: 500px;
+  max-width: 100%;
 }
 
 .container-left .content {
-  margin-left: 0;
   margin-right: auto;
   text-align: left;
 }
 
 .container-right .content {
   margin-left: auto;
-  margin-right: 0;
   text-align: right;
 }
