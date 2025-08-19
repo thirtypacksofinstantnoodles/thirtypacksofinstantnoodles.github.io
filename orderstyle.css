@@ -29,32 +29,10 @@ nav a:hover {
 
 }
 
+
 html, body {
   height: 100%;
   margin: 0;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-}
-
-body {
-  background: linear-gradient(to right, #ff6a00, #ee0979, #7e00c4);
-  background-attachment: fixed;
-}
-h1 {
-  color: blue;
-  text-align: center;
-}
-
-h2 {
-  color: violet;
-  text-align: center;
-}
-
-h3 {
-  color: orange;
-  text-align: center;
-}
-
-h4 {
-  text-align: center;
 }
