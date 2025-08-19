@@ -32,13 +32,13 @@
       color: #ff9800;
     }
 
-    /* Card container below nav */
+    /* Card container stacked vertically */
     .card-container {
       display: flex;
+      flex-direction: column; /* stack top to bottom */
       gap: 40px; /* space between cards */
-      flex-wrap: wrap;
-      justify-content: flex-start; /* align to left */
       padding: 20px; /* padding from edges */
+      align-items: flex-start; /* align to left */
     }
 
     .card {
@@ -92,7 +92,7 @@
     <a href="feedback.html">Contact Us!</a>
   </nav>
 
-  <!-- Cards aligned left below nav -->
+  <!-- Cards stacked vertically -->
   <div class="card-container">
     <div class="card" onclick="toggleInfo(this)">
       <img src="https://via.placeholder.com/300x200" alt="Sleek Image 1">
@@ -125,3 +125,4 @@
 
 </body>
 </html>
+
