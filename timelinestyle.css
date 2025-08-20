@@ -2,10 +2,17 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+}
+
+/* Navigation */
 nav {
   text-align: center;
   margin: 20px 0;
-  font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
@@ -17,74 +24,67 @@ nav a {
   border-radius: 5px;
   text-decoration: none;
   color: #000;
-  background-color: #fff;
-  transition: background-color 0.2s ease, color 0.2s ease;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav a:hover {
   background-color: #000;
   color: #fff;
-  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: arial, sans-serif;
-  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-}
-
-/* Center vertical line */
+/* Timeline center vertical line */
 .line {
   border-left: 6px solid white;
-  height: 3580px; /* Adjust based on content */
+  height: 100%;
   position: absolute;
   left: 50%;
-  margin-left: -3px; /* Half of the border width */
-  top: 150px;
+  top: 0;
+  margin-left: -3px;
+  z-index: 0;
 }
 
-/* Timeline wrapper */
+/* Timeline layout */
 .timeline {
   position: relative;
   width: 100%;
 }
 
-/* Shared container styling */
+/* Each timeline item container */
 .container-left,
 .container-right {
   position: relative;
   width: 100%;
-  margin: 50px 0;
+  height: 200px; /* Height for each row */
 }
 
-/* Content box */
-.container-left .content,
-.container-right .content {
+/* Shared content box style */
+.content {
   border-radius: 25px;
   border: 2px solid red;
-  padding: 20px; 
+  padding: 20px;
   width: 200px;
   height: 150px;
   background-color: white;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1;
 }
 
-/* LEFT content: aligned right with 150px gap */
+/* Left side content */
 .container-left .content {
-  margin-right: calc(50% + 150px); 
+  right: calc(50% + 150px);
   text-align: left;
 }
 
-/* RIGHT content: aligned left with 150px gap */
+/* Right side content */
 .container-right .content {
-  margin-left: calc(50% + 150px);
+  left: calc(50% + 150px);
   text-align: right;
 }
 
-/* Connecting lines */
+/* Connector lines */
 .container-left::before,
 .container-right::before {
   content: "";
@@ -98,12 +98,12 @@ html, body {
 
 .container-left::before {
   right: 50%;
-  transform: translateX(0%);
+  transform: translateY(-50%);
 }
 
 .container-right::before {
   left: 50%;
-  transform: translateX(0%);
+  transform: translateY(-50%);
 }
 
 /* Footer */
