@@ -7,7 +7,6 @@ nav {
   margin: 20px 0;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-
 }
 
 nav a {
@@ -22,7 +21,6 @@ nav a {
   transition: background-color 0.2s ease, color 0.2s ease;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-
 }
 
 nav a:hover {
@@ -30,16 +28,47 @@ nav a:hover {
   color: #fff;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+}
+
+/* Center vertical line */
+.line {
+  border-left: 6px solid white;
+  height: 3580px; /* Adjust if needed */
+  position: absolute;
+  left: 50%;
+  margin-left: -3px; /* Half of the border width */
+  top: 150px;
+}
+
+/* Container styling */
+.timeline {
+  position: relative;
+  width: 100%;
+}
+
+.container-left,
+.container-right {
+  position: relative;
+  width: 100%;
+  margin: 50px 0;
+}
+
+/* Content box styling */
 .container-left .content,
 .container-right .content {
   border-radius: 25px;
   border: 2px solid red;
   padding: 20px; 
-  width: 500px;
-  height: 100px;
+  width: 200px;
+  height: 150px;
+  background-color: white;
 }
 
 .container-left .content {
@@ -52,18 +81,29 @@ nav a:hover {
   text-align: right;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: arial, sans-serif;
-  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+/* Connecting lines */
+.container-left::before,
+.container-right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background: white;
 }
 
-.line {
-  border-left: 6px solid white;
-  height: 3580px;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 150px;
+.container-left::before {
+  right: calc(50% + 3px); /* Aligns with center line */
+}
+
+.container-right::before {
+  left: calc(50% + 3px);
+}
+
+/* Optional footer style */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #000;
 }
