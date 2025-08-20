@@ -89,7 +89,6 @@ function computeDesiredWidth(wrapper, img){
   const available = Math.max(220, containerRect.width - imgRect.width - 40);
 
   const panel = wrapper.querySelector('.info-panel');
-  const prevMax = wrapper.style.maxWidth;
   wrapper.style.maxWidth = 'none';
   const natural = panel.scrollWidth + 1;
   wrapper.style.maxWidth = prevMax || '0px';
