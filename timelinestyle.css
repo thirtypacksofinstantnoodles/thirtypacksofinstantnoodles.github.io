@@ -61,7 +61,7 @@ html, body {
 }
 
 .line {
-  border-left: 6px solid red;
+  border-left: 6px solid white;
   height: 500px;
   position: absolute;
   left: 50%;
