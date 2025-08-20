@@ -36,10 +36,10 @@ nav a:hover {
 /* Timeline center vertical line */
 .line {
   border-left: 6px solid white;
-  height: 10000px;
+  height: 3000px;
   position: absolute;
   left: 50%;
-  top: 350px;
+  top: 300px;
   margin-left: -3px;
   z-index: 0;
 }
