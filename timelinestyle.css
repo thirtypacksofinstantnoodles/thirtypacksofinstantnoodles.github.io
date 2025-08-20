@@ -35,12 +35,11 @@ nav a:hover {
 
 .container-left .content,
 .container-right .content {
-  border: 5px solid red;
-  background-color: #7d8796;
-  color: blue;
-  padding: 20px;
-  width: 500px;
-  max-width: 100%;
+  border-radius: 25px;
+  border: 2px solid red;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;
 }
 
 .container-left .content {
