@@ -17,7 +17,7 @@
     nav {
       background-color: #1e1e1e;
       padding: 15px;
-      text-align: center; /* center the nav items */
+      text-align: center;
     }
 
     nav a {
@@ -35,10 +35,10 @@
     /* Card container stacked vertically */
     .card-container {
       display: flex;
-      flex-direction: column; /* stack top to bottom */
-      gap: 40px; /* space between cards */
+      flex-direction: column;
+      gap: 40px;
       padding: 20px;
-      align-items: flex-start; /* align to left */
+      align-items: flex-start;
     }
 
     .card {
@@ -46,12 +46,12 @@
       border-radius: 12px;
       overflow: hidden;
       width: auto;
-      max-width: 90%; /* allow bigger space */
+      max-width: 90%;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
       cursor: pointer;
       transition: transform 0.2s ease;
       display: flex;          /* side by side */
-      align-items: flex-start;    /* align top with text */
+      align-items: flex-start;/* align text with top of image */
     }
 
     .card:hover {
@@ -59,22 +59,23 @@
     }
 
     .card img {
-      width: 150px;           /* image size */
-      flex-shrink: 0;         /* don’t shrink */
+      width: 150px;
+      flex-shrink: 0;
       border-right: 2px solid #2a2a2a;
     }
 
     .info {
-      max-width: 0;           /* start hidden */
+      max-width: 0;             /* hidden at first */
       overflow: hidden;
-      transition: max-width 0.5s ease, padding 0.5s ease;
-      padding: 0;
-      white-space: normal; /* wrap text */
+      transition: max-width 0.6s ease, opacity 0.6s ease;
+      padding: 15px;            /* always keep padding */
+      white-space: normal;      /* wrap text */
+      opacity: 0;               /* hidden text */
     }
 
     .info.open {
-      max-width: 2000px;       /* expand enough to show full text */
-      padding: 15px;
+      max-width: 2000px;        /* expand sideways */
+      opacity: 1;               /* fade in */
     }
 
     .info p {
@@ -90,7 +91,7 @@
 </head>
 <body>
 
-  
+  <!-- Navigation bar -->
   <nav>
     <a href="index.html">About Us</a>
     <a href="menu.html">Our Menu</a>
@@ -102,7 +103,7 @@
   </nav>
 
   <header>
-    <h1>Our three michelin star restaurant is commited to the following SDGs</h1>
+    <h1>Our three michelin star restaurant is committed to the following SDGs</h1>
   </header> 
 
   <div class="card-container">
