@@ -36,7 +36,7 @@ nav a:hover {
 /* Timeline center vertical line */
 .line {
   border-left: 6px solid white;
-  height: 700%;
+  height: 700px;
   position: absolute;
   left: 50%;
   top: 250px;
