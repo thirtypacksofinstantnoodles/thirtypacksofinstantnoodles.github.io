@@ -39,19 +39,18 @@
       gap: 40px;
       padding: 20px;
       align-items: flex-start;
+      position: relative;
     }
 
     .card {
+      position: relative;     /* for absolute positioning of info */
       background-color: #1e1e1e;
       border-radius: 12px;
-      overflow: hidden;
-      width: auto;
-      max-width: 90%;
+      overflow: visible;      /* let info stick out */
+      width: 150px;           /* only the image width */
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
       cursor: pointer;
       transition: transform 0.2s ease;
-      display: flex;          /* side by side */
-      align-items: flex-start;/* align text with top of image */
     }
 
     .card:hover {
@@ -60,22 +59,27 @@
 
     .card img {
       width: 150px;
-      flex-shrink: 0;
-      border-right: 2px solid #2a2a2a;
+      display: block;
+      border-radius: 12px;
     }
 
     .info {
-      max-width: 0;             /* hidden at first */
+      position: absolute;     /* float beside image */
+      top: 0;
+      left: 100%;             /* place to the right of image */
+      background-color: #1e1e1e;
+      border-radius: 0 12px 12px 0;
+      max-width: 0;           /* hidden at first */
       overflow: hidden;
       transition: max-width 0.6s ease, opacity 0.6s ease;
-      padding: 15px;            /* always keep padding */
-      white-space: normal;      /* wrap text */
-      opacity: 0;               /* hidden text */
+      padding: 15px;
+      white-space: normal;
+      opacity: 0;
     }
 
     .info.open {
-      max-width: 2000px;        /* expand sideways */
-      opacity: 1;               /* fade in */
+      max-width: 600px;       /* expand sideways */
+      opacity: 1;
     }
 
     .info p {
@@ -151,4 +155,3 @@
 
 </body>
 </html>
-
