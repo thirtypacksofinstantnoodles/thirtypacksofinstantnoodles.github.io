@@ -6,14 +6,13 @@
   <link rel="stylesheet" href="sdgstyle.css">
   <style>
     body {
-      background-color: #121212; /* black background */
+      background-color: #121212;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       color: white;
     }
 
-    /* Navigation bar styling */
     nav {
       background-color: #1e1e1e;
       padding: 15px;
@@ -32,25 +31,24 @@
       color: #ff9800;
     }
 
-    /* Card container stacked vertically */
     .card-container {
       display: flex;
       flex-direction: column;
       gap: 40px;
       padding: 20px;
       align-items: flex-start;
-      position: relative;
     }
 
     .card {
-      position: relative;     /* for absolute positioning of info */
+      display: flex;                  /* image + info side by side */
+      align-items: flex-start;
       background-color: #1e1e1e;
       border-radius: 12px;
-      overflow: visible;      /* let info stick out */
-      width: 150px;           /* only the image width */
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
       cursor: pointer;
+      overflow: hidden;
       transition: transform 0.2s ease;
+      max-width: 150px;               /* starts small, just the image */
     }
 
     .card:hover {
@@ -59,29 +57,26 @@
 
     .card img {
       width: 150px;
+      border-radius: 12px 0 0 12px;
       display: block;
-      border-radius: 12px;
     }
 
     .info {
-      position: absolute;     
-      top: 0;
-      left: 100%;             /* place to the right of image */
-      background-color: #1e1e1e;
-      border-radius: 0 12px 12px 0;
-      width: 400px;           /* fixed width panel */
-      padding: 15px;
-      white-space: normal;
+      flex: 1;                        /* take up space when open */
+      max-width: 0;                   /* hidden initially */
+      overflow: hidden;
       opacity: 0;
-      transform: translateX(-30px);   /* start slightly left */
-      pointer-events: none;   /* not clickable when closed */
-      transition: transform 0.5s ease, opacity 0.5s ease;
+      padding: 0;
+      transition: 
+        max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.4s ease 0.15s,
+        padding 0.3s ease;
     }
 
     .info.open {
+      max-width: 600px;               /* expand width */
       opacity: 1;
-      transform: translateX(0);  /* slide in smoothly */
-      pointer-events: auto;
+      padding: 15px;
     }
 
     .info p {
@@ -97,7 +92,6 @@
 </head>
 <body>
 
-  <!-- Navigation bar -->
   <nav>
     <a href="index.html">About Us</a>
     <a href="menu.html">Our Menu</a>
