@@ -64,22 +64,24 @@
     }
 
     .info {
-      position: absolute;     /* float beside image */
+      position: absolute;     
       top: 0;
       left: 100%;             /* place to the right of image */
       background-color: #1e1e1e;
       border-radius: 0 12px 12px 0;
-      max-width: 0;           /* hidden at first */
-      overflow: hidden;
-      transition: max-width 0.6s ease, opacity 0.6s ease;
+      width: 400px;           /* fixed width panel */
       padding: 15px;
       white-space: normal;
       opacity: 0;
+      transform: translateX(-30px);   /* start slightly left */
+      pointer-events: none;   /* not clickable when closed */
+      transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
     .info.open {
-      max-width: 600px;       /* expand sideways */
       opacity: 1;
+      transform: translateX(0);  /* slide in smoothly */
+      pointer-events: auto;
     }
 
     .info p {
