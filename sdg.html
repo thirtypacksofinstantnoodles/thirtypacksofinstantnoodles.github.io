@@ -1,129 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Our SDG's</title>
-  <link rel="stylesheet" href="sdgstyle.css">
-  <style>
-    body {
-      background-color: #121212; /* black background */
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+nav {
+  text-align: center;
+  margin: 20px 0;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 
-    /* Navigation bar styling */
-    nav {
-      background-color: #1e1e1e;
-      padding: 15px;
-      text-align: center; /* center the nav items */
-    }
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+nav a {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 
-    nav a:hover {
-      color: #ff9800;
-    }
+}
 
-    /* Card container stacked vertically */
-    .card-container {
-      display: flex;
-      flex-direction: column; /* stack top to bottom */
-      gap: 40px; /* space between cards */
-      padding: 20px; /* padding from edges */
-      align-items: flex-start; /* align to left */
-    }
+nav a:hover {
+  background-color: #000;
+  color: #fff;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 
-    .card {
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      overflow: hidden;
-      width: 300px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-      cursor: pointer;
-      color: white;
-      transition: transform 0.2s ease;
-    }
+}
 
-    .card:hover {
-      transform: scale(1.02);
-    }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: arial, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+}
+body {
+  background-color: #121212; /* black background */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-    .card img {
-      width: 100%;
-      display: block;
-    }
+/* Navigation bar styling */
+nav {
+  background-color: #1e1e1e;
+  padding: 15px;
+  text-align: center; /* center the nav items */
+  position: sticky; /* keeps nav visible while scrolling */
+  top: 0;
+  z-index: 10;
+}
 
-    .info {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.5s ease;
-      padding: 0 15px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
 
-    .info.open {
-      max-height: 200px;
-      padding: 15px;
-    }
+nav a:hover {
+  color: #ff9800;
+}
 
-    .info p {
-      margin: 0;
-      line-height: 1.5;
-    }
-  </style>
-</head>
-<body>
+/* Card container stacked vertically */
+.card-container {
+  display: flex;
+  flex-direction: column; /* stack top to bottom */
+  gap: 40px; /* space between cards */
+  padding: 20px;
+}
 
-  <!-- Navigation bar stays top center -->
-  <nav>
-    <a href="index.html">About Us</a>
-    <a href="menu.html">Our Menu</a>
-    <a href="sdg.html">SDG's</a>
-    <a href="timeline.html">Restaurant Timeline</a>
-    <a href="staff.html">Our Staff</a>
-    <a href="order.html">Order Now!</a>
-    <a href="feedback.html">Contact Us!</a>
-  </nav>
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%; /* full width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
+}
 
-<header><h1>Our three michelin star restaurant is commited to the following SDGs</h1></header> 
-  <div class="card-container">
-    <div class="card" onclick="toggleInfo(this)">
-      <img src="sdg/sdg2.png" alt="Sdg 2">
-      <div class="info">
-        <p>By donating leftovers or using ingredients efficiently, the shop can help reduce food waste, contributing to better food system sustainability.When someone orders food, they can buy an extra meal and leave the receipt on our special board. Each receipt is basically a prepaid meal. A person in need can simply walk in, take a receipt from the board, and get a hot meal—no questions asked.</p>
-      </div>
-    </div>
+.card:hover {
+  transform: scale(1.01);
+}
 
-    <div class="card" onclick="toggleInfo(this)">
-      <img src="sdg/sdg8.png" alt="Sdg 8">
-      <div class="info">
-        <p>We provide employment opportunities for chefs, servers, cleaners, delivery staff, and more.
- We offer jobs to youth, women, elderly workers, or marginalized groups, helping ensure equal access to economic opportunities.</p>
-      </div>
-    </div>
+.card img {
+  width: 100%;
+  display: block;
+}
 
-    <div class="card" onclick="toggleInfo(this)">
-      <img src="sdg/sdg12.png" alt="Sdg 12">
-      <div class="info">
-        <p>Our franchise taxes customers who waste food. For example, for every 100g of food wastage, we tax the customers RM10. This helps encourage customers to take away food or to finish their food to prevent being taxed.
-  We take left over food and provide them to farmers. Farmers can use these food wastage and feed them to the pigs. The pig manure is then used as compost.
-	We also keep some of the more moldy food in a storage bin, as pigs are unable to eat moldy food. The moldy food is kept until there are no more storage space, then it's grinded into a composter. The grinded food is given to farmers to use as compost.
-      </div>
-    </div>
-  </div>
+.info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding: 0 15px;
+}
 
-  <script>
-    function toggleInfo(card) {
-      const info = card.querySelector('.info');
-      info.classList.toggle('open');
-    }
-  </script>
+.info.open {
+  max-height: 500px; /* allow more space for text */
+  padding: 15px;
+}
 
-</body>
-</html>
+.info p {
+  margin: 0;
+  line-height: 1.6;
+}
