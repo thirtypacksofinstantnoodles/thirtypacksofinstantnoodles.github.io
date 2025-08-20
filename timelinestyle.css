@@ -62,9 +62,9 @@ html, body {
 
 .line {
   border-left: 6px solid white;
-  height: 1000px;
+  height: 10700px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
-  top: 170px;
+  top: 150px;
 }
