@@ -10,6 +10,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      color: white;
     }
 
     /* Navigation bar styling */
@@ -36,7 +37,7 @@
       display: flex;
       flex-direction: column; /* stack top to bottom */
       gap: 40px; /* space between cards */
-      padding: 20px; /* padding from edges */
+      padding: 20px;
       align-items: flex-start; /* align to left */
     }
 
@@ -44,11 +45,13 @@
       background-color: #1e1e1e;
       border-radius: 12px;
       overflow: hidden;
-      width: 300px;
+      width: auto;
+      max-width: 90%; /* allow bigger space */
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
       cursor: pointer;
-      color: white;
       transition: transform 0.2s ease;
+      display: flex;          /* side by side */
+      align-items: flex-start;    /* align top with text */
     }
 
     .card:hover {
@@ -56,19 +59,21 @@
     }
 
     .card img {
-      width: 100%;
-      display: block;
+      width: 150px;           /* image size */
+      flex-shrink: 0;         /* don’t shrink */
+      border-right: 2px solid #2a2a2a;
     }
 
     .info {
-      max-height: 0;
+      max-width: 0;           /* start hidden */
       overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.5s ease;
-      padding: 0 15px;
+      transition: max-width 0.5s ease, padding 0.5s ease;
+      padding: 0;
+      white-space: normal; /* wrap text */
     }
 
     .info.open {
-      max-height: 200px;
+      max-width: 2000px;       /* expand enough to show full text */
       padding: 15px;
     }
 
@@ -76,11 +81,16 @@
       margin: 0;
       line-height: 1.5;
     }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation bar stays top center -->
+  
   <nav>
     <a href="index.html">About Us</a>
     <a href="menu.html">Our Menu</a>
@@ -91,29 +101,42 @@
     <a href="feedback.html">Contact Us!</a>
   </nav>
 
-<header><h1>Our three michelin star restaurant is commited to the following SDGs</h1></header> 
+  <header>
+    <h1>Our three michelin star restaurant is commited to the following SDGs</h1>
+  </header> 
+
   <div class="card-container">
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg2.png" alt="Sdg 2">
       <div class="info">
-        <p>By donating leftovers or using ingredients efficiently, the shop can help reduce food waste, contributing to better food system sustainability.When someone orders food, they can buy an extra meal and leave the receipt on our special board. Each receipt is basically a prepaid meal. A person in need can simply walk in, take a receipt from the board, and get a hot meal—no questions asked.</p>
+        <p>
+          By donating leftovers or using ingredients efficiently, the shop can help reduce food waste, contributing to better food system sustainability.
+          When someone orders food, they can buy an extra meal and leave the receipt on our special board. Each receipt is basically a prepaid meal. 
+          A person in need can simply walk in, take a receipt from the board, and get a hot meal—no questions asked.
+        </p>
       </div>
     </div>
 
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg8.png" alt="Sdg 8">
       <div class="info">
-        <p>We provide employment opportunities for chefs, servers, cleaners, delivery staff, and more.
- We offer jobs to youth, women, elderly workers, or marginalized groups, helping ensure equal access to economic opportunities.</p>
+        <p>
+          We provide employment opportunities for chefs, servers, cleaners, delivery staff, and more.
+          We offer jobs to youth, women, elderly workers, or marginalized groups, helping ensure equal access to economic opportunities.
+        </p>
       </div>
     </div>
 
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg12.png" alt="Sdg 12">
       <div class="info">
-        <p>Our franchise taxes customers who waste food. For example, for every 100g of food wastage, we tax the customers RM10. This helps encourage customers to take away food or to finish their food to prevent being taxed.
-  We take left over food and provide them to farmers. Farmers can use these food wastage and feed them to the pigs. The pig manure is then used as compost.
-	We also keep some of the more moldy food in a storage bin, as pigs are unable to eat moldy food. The moldy food is kept until there are no more storage space, then it's grinded into a composter. The grinded food is given to farmers to use as compost.
+        <p>
+          Our franchise taxes customers who waste food. For example, for every 100g of food wastage, we tax the customers RM10. 
+          This helps encourage customers to take away food or to finish their food to prevent being taxed.  
+          We take leftover food and provide them to farmers. Farmers can use this food wastage to feed pigs, 
+          and the pig manure is then used as compost.  
+          Moldy food that pigs cannot eat is stored and later ground into compost for farmers.
+        </p>
       </div>
     </div>
   </div>
@@ -127,3 +150,4 @@
 
 </body>
 </html>
+
