@@ -43,19 +43,20 @@
     .card img {
       width: 150px;
       height: 150px;
-      object-fit: contain;
+      object-fit: cover;                 /* cover for smoother edges */
       display: block;
-      border-radius: 8px;
+      border-radius: 18px;               /* smoother rounded corners */
       background: transparent;
-      padding: 8px;
+      padding: 6px;                      /* small inner padding so rounding looks nicer */
       box-sizing: border-box;
       align-self: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.35); /* subtle lift */
     }
 
     /* Info panel stays in-flow (so it pushes) but has same fixed height as image to avoid vertical changes.
        It has a solid dark background that only shows when opened. When closed it's width 0 and transparent. */
     .info {
-      background-color: rgba(30,30,30,1);  /* black card background when visible */
+      background-color: rgba(18,18,18,0.96);  /* slightly translucent black for nicer look */
       color: white;
       padding: 16px;
       box-sizing: border-box;
@@ -69,13 +70,14 @@
       /* hidden state */
       max-width: 0px;
       opacity: 0;
-      transform: translateX(-24px);
+      transform: translateX(-40px);  /* start further left for a more noticeable slide */
       overflow: hidden; /* hide text when closed */
 
+      /* slower, smoother transitions for both open & close */
       transition:
-        max-width 0.52s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.48s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.28s ease 0.08s;
+        max-width 0.8s cubic-bezier(0.2, 0.9, 0.3, 1),
+        transform 0.72s cubic-bezier(0.2, 0.9, 0.3, 1),
+        opacity 0.42s ease 0.06s;
     }
 
     /* When open: black panel slides in and fades in. max-width set by JS. */
@@ -90,7 +92,7 @@
     /* small responsive tweaks */
     @media (max-width: 700px) {
       .card { flex-direction: column; min-height: auto; }
-      .card img { width: 100%; height: auto; padding: 12px; }
+      .card img { width: 100%; height: auto; padding: 12px; border-radius: 12px; }
       .info { height: auto; max-width: none; transform: translateY(-12px); }
       .info.open { transform: translateY(0); }
     }
@@ -156,6 +158,7 @@
       - it does NOT overlap the SDG image (it's in-flow) and does NOT push content vertically because
         both image and info share a fixed height (150px) so no downward glitch.
       - only one info panel stays open at a time.
+      - the open/close animations are slower and smoother now (both directions).
       - if the text is too long, the black panel scrolls internally (no layout jump).
     */
 
