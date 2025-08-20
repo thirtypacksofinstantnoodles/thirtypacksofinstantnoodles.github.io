@@ -5,6 +5,7 @@
   <title>Our SDG's</title>
   <link rel="stylesheet" href="sdgstyle.css">
   <style>
+    /* --- Page basics --- */
     body {
       background-color: #121212;
       font-family: Arial, sans-serif;
@@ -27,66 +28,83 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #ff9800;
-    }
+    nav a:hover { color: #ff9800; }
 
+    header { text-align: center; padding: 20px; }
+
+    /* --- Cards column --- */
     .card-container {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 24px;
       padding: 20px;
-      align-items: flex-start;
+      width: 100%;
+      box-sizing: border-box;
     }
 
+    /* Each card is a horizontal row: image on left, info on right (in-flow) */
     .card {
-      display: flex;                  /* image + info side by side */
+      display: flex;
       align-items: flex-start;
+      gap: 0;
       background-color: #1e1e1e;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
       cursor: pointer;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-      max-width: 150px;               /* starts small, just the image */
+      overflow: hidden;               /* keeps rounded corners */
+      transition: transform 0.14s ease;
+      width: 100%;                     /* allow card to use full available width */
+      box-sizing: border-box;
     }
 
-    .card:hover {
-      transform: scale(1.02);
-    }
+    .card:hover { transform: scale(1.01); }
 
+    /* SDG image: fixed width so info will expand to the right without overlapping */
     .card img {
       width: 150px;
-      border-radius: 12px 0 0 12px;
+      height: 150px;
+      object-fit: contain;
       display: block;
+      border-radius: 12px 0 0 12px;
+      background: #0f0f0f;
+      padding: 12px;
+      box-sizing: border-box;
     }
 
+    /* Info panel lives in the flow (not absolute) so it pushes content rather than overlapping.
+       We'll animate max-width and use transform for a 'slide' feeling. */
     .info {
-      flex: 1;                        /* take up space when open */
-      max-width: 0;                   /* hidden initially */
-      overflow: hidden;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 15px;                   /* keep padding constant to avoid vertical jump */
+      box-sizing: border-box;
+      border-radius: 0 12px 12px 0;
+
+      /* start visually hidden by limiting width and lowering opacity/shift */
+      max-width: 0px;
       opacity: 0;
-      padding: 0;
-      transition: 
-        max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.4s ease 0.15s,
-        padding 0.3s ease;
+      transform: translateX(-24px);
+      overflow: hidden;                /* hide overflowing text until opened */
+
+      /* smooth, natural easing for width + transform */
+      transition:
+        max-width 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.28s ease 0.08s;
     }
 
+    /* Open state: reveal the info panel. max-width will be set from JS so here we only change opacity/transform hooks */
     .info.open {
-      max-width: 600px;               /* expand width */
       opacity: 1;
-      padding: 15px;
+      transform: translateX(0);
+      /* max-width set inline by JS to match content and available space */
     }
 
-    .info p {
-      margin: 0;
-      line-height: 1.5;
-    }
+    .info p { margin: 0; line-height: 1.5; }
 
-    header {
-      text-align: center;
-      padding: 20px;
+    /* small responsive tweaks */
+    @media (max-width: 700px) {
+      .card img { width: 120px; height: 120px; padding: 10px; }
     }
   </style>
 </head>
@@ -104,15 +122,16 @@
 
   <header>
     <h1>Our three michelin star restaurant is committed to the following SDGs</h1>
-  </header> 
+  </header>
 
   <div class="card-container">
+
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg2.png" alt="Sdg 2">
-      <div class="info">
+      <div class="info" aria-hidden="true">
         <p>
           By donating leftovers or using ingredients efficiently, the shop can help reduce food waste, contributing to better food system sustainability.
-          When someone orders food, they can buy an extra meal and leave the receipt on our special board. Each receipt is basically a prepaid meal. 
+          When someone orders food, they can buy an extra meal and leave the receipt on our special board. Each receipt is basically a prepaid meal.
           A person in need can simply walk in, take a receipt from the board, and get a hot meal—no questions asked.
         </p>
       </div>
@@ -120,7 +139,7 @@
 
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg8.png" alt="Sdg 8">
-      <div class="info">
+      <div class="info" aria-hidden="true">
         <p>
           We provide employment opportunities for chefs, servers, cleaners, delivery staff, and more.
           We offer jobs to youth, women, elderly workers, or marginalized groups, helping ensure equal access to economic opportunities.
@@ -130,23 +149,99 @@
 
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg12.png" alt="Sdg 12">
-      <div class="info">
+      <div class="info" aria-hidden="true">
         <p>
-          Our franchise taxes customers who waste food. For example, for every 100g of food wastage, we tax the customers RM10. 
-          This helps encourage customers to take away food or to finish their food to prevent being taxed.  
-          We take leftover food and provide them to farmers. Farmers can use this food wastage to feed pigs, 
-          and the pig manure is then used as compost.  
-          Moldy food that pigs cannot eat is stored and later ground into compost for farmers.
+          Our franchise taxes customers who waste food. For example, for every 100g of food wastage, we tax the customers RM10.
+          This helps encourage customers to take away food or to finish their food to prevent being taxed.
+          We take leftover food and provide them to farmers. Farmers can use this food wastage to feed pigs,
+          and the pig manure is then used as compost. Moldy food that pigs cannot eat is stored and later ground into compost for farmers.
         </p>
       </div>
     </div>
+
   </div>
 
   <script>
+    /* Toggle the info panel. This JS measures available space and content width
+       and sets an inline max-width so the CSS transition animates to the exact size needed.
+       That lets the panel slide in naturally without overlapping the SDG image. */
     function toggleInfo(card) {
       const info = card.querySelector('.info');
-      info.classList.toggle('open');
+      const img = card.querySelector('img');
+
+      const isOpen = info.classList.contains('open');
+
+      if (isOpen) {
+        // close: remove open class (triggers transform/opacity), then shrink width
+        info.classList.remove('open');
+        // give the opacity/transform a tiny head start, then clamp width to 0 to animate
+        requestAnimationFrame(() => {
+          info.style.maxWidth = '0px';
+          info.setAttribute('aria-hidden', 'true');
+        });
+        return;
+      }
+
+      // open: compute how wide the info should be
+      // Available space: card-container width (viewport/parent) minus image width minus some gap
+      const container = document.querySelector('.card-container');
+      const containerStyle = getComputedStyle(container);
+      const containerPaddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
+      const containerPaddingRight = parseFloat(containerStyle.paddingRight) || 0;
+      const containerWidth = container.clientWidth - containerPaddingLeft - containerPaddingRight;
+
+      const imgWidth = img.getBoundingClientRect().width;
+
+      // leave some breathing room on the right (20px)
+      const availableWidth = Math.max(240, containerWidth - imgWidth - 40);
+
+      // measure the content's natural width by temporarily letting it expand
+      info.style.maxWidth = 'none';
+      const naturalWidth = info.scrollWidth + 1; // +1 for rounding safety
+
+      // desired width: the smaller of natural width and available space
+      const desiredWidth = Math.min(naturalWidth, availableWidth);
+
+      // set back to 0 so transition runs, then set to desired width
+      info.style.maxWidth = '0px';
+      info.setAttribute('aria-hidden', 'false');
+
+      // trigger layout then set final width and open-class for transform/opacity
+      requestAnimationFrame(() => {
+        info.style.maxWidth = desiredWidth + 'px';
+        info.classList.add('open');
+      });
+
+      // Optional: remove inline maxWidth after transition so it becomes flexible on resize
+      const onTransitionEnd = (e) => {
+        if (e.propertyName === 'max-width') {
+          info.style.maxWidth = '';
+          info.removeEventListener('transitionend', onTransitionEnd);
+        }
+      };
+      info.addEventListener('transitionend', onTransitionEnd);
     }
+
+    // Close any open panels when clicking outside
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('.card');
+      if (!card) {
+        document.querySelectorAll('.info.open').forEach(info => {
+          info.classList.remove('open');
+          info.style.maxWidth = '0px';
+          info.setAttribute('aria-hidden', 'true');
+        });
+      }
+    });
+
+    // On window resize, we close open panels to avoid layout issues; user can reopen.
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.info.open').forEach(info => {
+        info.classList.remove('open');
+        info.style.maxWidth = '0px';
+        info.setAttribute('aria-hidden', 'true');
+      });
+    });
   </script>
 
 </body>
