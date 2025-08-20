@@ -14,50 +14,30 @@
       color: white;
     }
 
-    nav {
-      background-color: #1e1e1e;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
+    nav { background-color: #1e1e1e; padding: 15px; text-align: center; }
+    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; transition: color 0.3s; }
     nav a:hover { color: #ff9800; }
-
     header { text-align: center; padding: 20px; }
 
     /* --- Cards column --- */
-    .card-container {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      padding: 20px;
-      width: 100%;
-      box-sizing: border-box;
-    }
+    .card-container { display: flex; flex-direction: column; gap: 24px; padding: 20px; width: 100%; box-sizing: border-box; }
 
     /* Each card is a horizontal row: image on left, info on right (in-flow) */
     .card {
       display: flex;
       align-items: flex-start;
-      gap: 0;
-      background-color: #1e1e1e;
+      background-color: transparent; /* remove solid black card background */
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       cursor: pointer;
-      overflow: hidden;               /* keeps rounded corners */
-      transition: transform 0.14s ease;
-      width: 100%;                     /* allow card to use full available width */
+      overflow: visible;
+      transition: transform 0.12s ease;
+      width: 100%;
       box-sizing: border-box;
+      padding-left: 0;
     }
 
-    .card:hover { transform: scale(1.01); }
+    .card:hover { transform: translateY(-2px); }
 
     /* SDG image: fixed width so info will expand to the right without overlapping */
     .card img {
@@ -65,46 +45,42 @@
       height: 150px;
       object-fit: contain;
       display: block;
-      border-radius: 12px 0 0 12px;
-      background: #0f0f0f;
-      padding: 12px;
+      border-radius: 8px;
+      background: transparent; /* remove black bg behind image */
+      padding: 8px;
       box-sizing: border-box;
     }
 
-    /* Info panel lives in the flow (not absolute) so it pushes content rather than overlapping.
-       We'll animate max-width and use transform for a 'slide' feeling. */
+    /* Info panel lives in-flow. Background removed so there's no black box. A subtle left border separates the panel from the image. */
     .info {
-      background-color: #1e1e1e;
       color: white;
-      padding: 15px;                   /* keep padding constant to avoid vertical jump */
+      padding: 16px;
       box-sizing: border-box;
-      border-radius: 0 12px 12px 0;
+      border-left: 1px solid rgba(255,255,255,0.04); /* subtle separator */
 
-      /* start visually hidden by limiting width and lowering opacity/shift */
+      /* start visually hidden by limiting width and shifting left */
       max-width: 0px;
       opacity: 0;
-      transform: translateX(-24px);
-      overflow: hidden;                /* hide overflowing text until opened */
+      transform: translateX(-18px);
+      overflow: hidden;
 
-      /* smooth, natural easing for width + transform */
       transition:
         max-width 0.52s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.48s cubic-bezier(0.22, 1, 0.36, 1),
         opacity 0.28s ease 0.08s;
     }
 
-    /* Open state: reveal the info panel. max-width will be set from JS so here we only change opacity/transform hooks */
+    /* Open state: visible and slid into place. max-width is set by JS to fit content & available space. */
     .info.open {
       opacity: 1;
       transform: translateX(0);
-      /* max-width set inline by JS to match content and available space */
     }
 
-    .info p { margin: 0; line-height: 1.5; }
+    .info p { margin: 0; line-height: 1.6; }
 
-    /* small responsive tweaks */
+    /* responsive tweaks */
     @media (max-width: 700px) {
-      .card img { width: 120px; height: 120px; padding: 10px; }
+      .card img { width: 120px; height: 120px; padding: 6px; }
     }
   </style>
 </head>
@@ -162,85 +138,83 @@
   </div>
 
   <script>
-    /* Toggle the info panel. This JS measures available space and content width
-       and sets an inline max-width so the CSS transition animates to the exact size needed.
-       That lets the panel slide in naturally without overlapping the SDG image. */
-    function toggleInfo(card) {
-      const info = card.querySelector('.info');
-      const img = card.querySelector('img');
+    /*
+      New behavior requested:
+      - remove the dark 'info' box (so info background is transparent)
+      - slide the info naturally to the right (no overlap)
+      - keep the opened panel visible until user opens another (only one open at a time)
+    */
 
-      const isOpen = info.classList.contains('open');
-
-      if (isOpen) {
-        // close: remove open class (triggers transform/opacity), then shrink width
-        info.classList.remove('open');
-        // give the opacity/transform a tiny head start, then clamp width to 0 to animate
-        requestAnimationFrame(() => {
-          info.style.maxWidth = '0px';
-          info.setAttribute('aria-hidden', 'true');
-        });
-        return;
-      }
-
-      // open: compute how wide the info should be
-      // Available space: card-container width (viewport/parent) minus image width minus some gap
-      const container = document.querySelector('.card-container');
-      const containerStyle = getComputedStyle(container);
-      const containerPaddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
-      const containerPaddingRight = parseFloat(containerStyle.paddingRight) || 0;
-      const containerWidth = container.clientWidth - containerPaddingLeft - containerPaddingRight;
-
-      const imgWidth = img.getBoundingClientRect().width;
-
-      // leave some breathing room on the right (20px)
-      const availableWidth = Math.max(240, containerWidth - imgWidth - 40);
-
-      // measure the content's natural width by temporarily letting it expand
-      info.style.maxWidth = 'none';
-      const naturalWidth = info.scrollWidth + 1; // +1 for rounding safety
-
-      // desired width: the smaller of natural width and available space
-      const desiredWidth = Math.min(naturalWidth, availableWidth);
-
-      // set back to 0 so transition runs, then set to desired width
-      info.style.maxWidth = '0px';
-      info.setAttribute('aria-hidden', 'false');
-
-      // trigger layout then set final width and open-class for transform/opacity
-      requestAnimationFrame(() => {
-        info.style.maxWidth = desiredWidth + 'px';
-        info.classList.add('open');
-      });
-
-      // Optional: remove inline maxWidth after transition so it becomes flexible on resize
-      const onTransitionEnd = (e) => {
-        if (e.propertyName === 'max-width') {
-          info.style.maxWidth = '';
-          info.removeEventListener('transitionend', onTransitionEnd);
-        }
-      };
-      info.addEventListener('transitionend', onTransitionEnd);
-    }
-
-    // Close any open panels when clicking outside
-    document.addEventListener('click', (e) => {
-      const card = e.target.closest('.card');
-      if (!card) {
-        document.querySelectorAll('.info.open').forEach(info => {
-          info.classList.remove('open');
-          info.style.maxWidth = '0px';
-          info.setAttribute('aria-hidden', 'true');
-        });
-      }
-    });
-
-    // On window resize, we close open panels to avoid layout issues; user can reopen.
-    window.addEventListener('resize', () => {
+    function closeOtherInfos(exceptInfo) {
       document.querySelectorAll('.info.open').forEach(info => {
+        if (info === exceptInfo) return;
         info.classList.remove('open');
         info.style.maxWidth = '0px';
         info.setAttribute('aria-hidden', 'true');
       });
+    }
+
+    function computeDesiredWidth(info, img) {
+      const container = document.querySelector('.card-container');
+      const containerStyle = getComputedStyle(container);
+      const paddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
+      const paddingRight = parseFloat(containerStyle.paddingRight) || 0;
+      const containerWidth = container.clientWidth - paddingLeft - paddingRight;
+      const imgRect = img.getBoundingClientRect();
+      const imgWidth = imgRect.width;
+
+      const available = Math.max(200, containerWidth - imgWidth - 40); // leave breathing room
+
+      // measure natural width
+      const prev = info.style.maxWidth;
+      info.style.maxWidth = 'none';
+      const natural = info.scrollWidth + 1;
+      info.style.maxWidth = prev || '0px';
+
+      return Math.min(natural, available);
+    }
+
+    function toggleInfo(card) {
+      const info = card.querySelector('.info');
+      const img = card.querySelector('img');
+      const isOpen = info.classList.contains('open');
+
+      if (isOpen) {
+        // close this info
+        info.classList.remove('open');
+        info.style.maxWidth = '0px';
+        info.setAttribute('aria-hidden', 'true');
+        return;
+      }
+
+      // close others (only one open at a time)
+      closeOtherInfos(info);
+
+      // compute and animate to desired width
+      const desired = computeDesiredWidth(info, img);
+      info.style.maxWidth = '0px';
+      info.setAttribute('aria-hidden', 'false');
+
+      requestAnimationFrame(() => {
+        info.style.maxWidth = desired + 'px';
+        info.classList.add('open');
+      });
+
+      // keep the inline maxWidth so it remains visible; on resize we recompute instead of auto-closing
+    }
+
+    // Recompute widths for open panels on resize so they stay visible and don't overflow
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        document.querySelectorAll('.info.open').forEach(info => {
+          const card = info.closest('.card');
+          const img = card.querySelector('img');
+          const desired = computeDesiredWidth(info, img);
+          info.style.maxWidth = desired + 'px';
+        });
+      }, 120);
     });
   </script>
 
