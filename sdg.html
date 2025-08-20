@@ -2,106 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta charset="utf-8" />
   <title>Our SDG's</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="sdgstyle.css">
   <style>
-    /* --- Page basics --- */
     body {
-      background-color: #121212;
+      background-color: #121212; /* black background */
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      color: white;
     }
 
-    nav { background-color: #1e1e1e; padding: 15px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #ff9800; }
-    header { text-align: center; padding: 20px; }
+    /* Navigation bar styling */
+    nav {
+      background-color: #1e1e1e;
+      padding: 15px;
+      text-align: center; /* center the nav items */
+    }
 
-    /* --- Cards column --- */
-    .card-container { display: flex; flex-direction: column; gap: 24px; padding: 20px; width: 100%; box-sizing: border-box; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-    /* Each card: image on left, info on right (in-flow). We'll keep the card height fixed to avoid vertical jumps. */
-    .card {
+    nav a:hover {
+      color: #ff9800;
+    }
+
+    /* Card container stacked vertically */
+    .card-container {
       display: flex;
-      align-items: stretch;               /* make children equal height */
-      background-color: transparent;
+      flex-direction: column; /* stack top to bottom */
+      gap: 40px; /* space between cards */
+      padding: 20px; /* padding from edges */
+      align-items: flex-start; /* align to left */
+    }
+
+    .card {
+      background-color: #1e1e1e;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
       cursor: pointer;
-      overflow: visible;
-      transition: transform 0.12s ease;
-      width: 100%;
-      box-sizing: border-box;
-      min-height: 150px;                  /* reserve height so opening doesn't push content */
-    }
-
-    .card:hover { transform: translateY(-2px); }
-
-    /* SDG image: fixed size and vertically centered; keeps card height stable. */
-    .card img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;                 /* cover for smoother edges */
-      display: block;
-      border-radius: 18px;               /* smoother rounded corners */
-      background: transparent;
-      padding: 6px;                      /* small inner padding so rounding looks nicer */
-      box-sizing: border-box;
-      align-self: center;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.35); /* subtle lift */
-    }
-
-    /* Info panel stays in-flow (so it pushes) but has same fixed height as image to avoid vertical changes.
-       It has a solid dark background that only shows when opened. When closed it's width 0 and transparent. */
-    .info {
-      background-color: rgba(18,18,18,0.96);  /* slightly translucent black for nicer look */
       color: white;
-      padding: 16px;
-      box-sizing: border-box;
-      border-radius: 0 12px 12px 0;
-      margin-left: 0;
-
-      /* fixed height equal to image to prevent vertical jumps */
-      height: 150px;
-      overflow: auto;             /* if content is long, allow scrolling inside the black card */
-
-      /* hidden state */
-      max-width: 0px;
-      opacity: 0;
-      transform: translateX(-40px);  /* start further left for a more noticeable slide */
-      overflow: hidden; /* hide text when closed */
-
-      /* slower, smoother transitions for both open & close */
-      transition:
-        max-width 0.8s cubic-bezier(0.2, 0.9, 0.3, 1),
-        transform 0.72s cubic-bezier(0.2, 0.9, 0.3, 1),
-        opacity 0.42s ease 0.06s;
+      transition: transform 0.2s ease;
     }
 
-    /* When open: black panel slides in and fades in. max-width set by JS. */
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .info {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0 15px;
+    }
+
     .info.open {
-      opacity: 1;
-      transform: translateX(0);
-      overflow: auto; /* allow scroll when open */
+      max-height: 200px;
+      padding: 15px;
     }
 
-    .info p { margin: 0; line-height: 1.5; }
-
-    /* small responsive tweaks */
-    @media (max-width: 700px) {
-      .card { flex-direction: column; min-height: auto; }
-      .card img { width: 100%; height: auto; padding: 12px; border-radius: 12px; }
-      .info { height: auto; max-width: none; transform: translateY(-12px); }
-      .info.open { transform: translateY(0); }
+    .info p {
+      margin: 0;
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation bar stays top center -->
   <nav>
     <a href="index.html">About Us</a>
     <a href="menu.html">Our Menu</a>
@@ -112,243 +91,39 @@
     <a href="feedback.html">Contact Us!</a>
   </nav>
 
-  <header>
-    <h1>Our three michelin star restaurant is committed to the following SDGs</h1>
-  </header>
-
+<header><h1>Our three michelin star restaurant is commited to the following SDGs</h1></header> 
   <div class="card-container">
-
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg2.png" alt="Sdg 2">
-      <div class="info" aria-hidden="true">
-<nav>
-  <a href="#">About Us</a>
-  <a href="#">Menu</a>
-  <a href="#">SDG's</a>
-  <a href="#">Timeline</a>
-</nav>
-
-<header>
-  <h1>Our three michelin star restaurant is committed to the following SDGs</h1>
-</header>
-
-<div class="card-container">
-  <div class="card" onclick="toggleInfo(this)">
-    <img src="sdg/sdg2.png" alt="SDG 2">
-    <div class="info-wrapper" aria-hidden="true">
-      <div class="info-panel" role="region" aria-label="SDG 2 info">
-        <p>
-          By donating leftovers or using ingredients efficiently, the shop can help reduce food waste, contributing to better food system sustainability.
-          When someone orders food, they can buy an extra meal and leave the receipt on our special board. Each receipt is basically a prepaid meal.
-          A person in need can simply walk in, take a receipt from the board, and get a hot meal—no questions asked.
-        </p>
+      <div class="info">
+        <p>By donating leftovers or using ingredients efficiently, the shop can help reduce food waste, contributing to better food system sustainability.When someone orders food, they can buy an extra meal and leave the receipt on our special board. Each receipt is basically a prepaid meal. A person in need can simply walk in, take a receipt from the board, and get a hot meal—no questions asked.</p>
       </div>
     </div>
-  </div>
 
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg8.png" alt="Sdg 8">
-      <div class="info" aria-hidden="true">
-  <div class="card" onclick="toggleInfo(this)">
-    <img src="sdg/sdg8.png" alt="SDG 8">
-    <div class="info-wrapper" aria-hidden="true">
-      <div class="info-panel" role="region" aria-label="SDG 8 info">
-        <p>
-          We provide employment opportunities for chefs, servers, cleaners, delivery staff, and more.
-          We offer jobs to youth, women, elderly workers, or marginalized groups, helping ensure equal access to economic opportunities.
-        </p>
+      <div class="info">
+        <p>We provide employment opportunities for chefs, servers, cleaners, delivery staff, and more.
+ We offer jobs to youth, women, elderly workers, or marginalized groups, helping ensure equal access to economic opportunities.</p>
       </div>
     </div>
-  </div>
 
     <div class="card" onclick="toggleInfo(this)">
       <img src="sdg/sdg12.png" alt="Sdg 12">
-      <div class="info" aria-hidden="true">
-  <div class="card" onclick="toggleInfo(this)">
-    <img src="sdg/sdg12.png" alt="SDG 12">
-    <div class="info-wrapper" aria-hidden="true">
-      <div class="info-panel" role="region" aria-label="SDG 12 info">
-        <p>
-          Our franchise taxes customers who waste food. For example, for every 100g of food wastage, we tax the customers RM10.
-          This helps encourage customers to take away food or to finish their food to prevent being taxed.
-@@ -148,89 +57,101 @@ <h1>Our three michelin star restaurant is committed to the following SDGs</h1>
-        </p>
+      <div class="info">
+        <p>Our franchise taxes customers who waste food. For example, for every 100g of food wastage, we tax the customers RM10. This helps encourage customers to take away food or to finish their food to prevent being taxed.
+  We take left over food and provide them to farmers. Farmers can use these food wastage and feed them to the pigs. The pig manure is then used as compost.
+	We also keep some of the more moldy food in a storage bin, as pigs are unable to eat moldy food. The moldy food is kept until there are no more storage space, then it's grinded into a composter. The grinded food is given to farmers to use as compost.
       </div>
     </div>
-
   </div>
 
   <script>
-    /*
-      Behavior implemented:
-      - black info card appears only when you click the SDG (slides in naturally)
-      - it does NOT overlap the SDG image (it's in-flow) and does NOT push content vertically because
-        both image and info share a fixed height (150px) so no downward glitch.
-      - only one info panel stays open at a time.
-      - the open/close animations are slower and smoother now (both directions).
-      - if the text is too long, the black panel scrolls internally (no layout jump).
-    */
-
-    function closeOtherInfos(exceptInfo) {
-      document.querySelectorAll('.info.open').forEach(info => {
-        if (info === exceptInfo) return;
-        info.classList.remove('open');
-        info.style.maxWidth = '0px';
-        info.setAttribute('aria-hidden', 'true');
-      });
-</div>
-
-<script>
-/* Curtain-style slide in/out without corner rocket
-   - wrapper reserves width in layout
-   - panel slides via transform (translateX), so the entire block moves uniformly
-   - on close: panel slides out, then wrapper collapses
-   - only one panel open at a time
-*/
-
-const SLIDE_MS = 800; // if you change CSS var --slide-duration, change this too (ms)
-const FADE_MS = 300;
-
-function closeAllExcept(exceptWrapper){
-  document.querySelectorAll('.info-wrapper').forEach(w => {
-    if (w === exceptWrapper) return;
-    const panel = w.querySelector('.info-panel');
-    if (!panel) return;
-    if (panel.classList.contains('open')) {
-      retractPanel(w, panel);
-    }
-
-    function computeDesiredWidth(info, img) {
-      const container = document.querySelector('.card-container');
-      const containerStyle = getComputedStyle(container);
-      const paddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
-      const paddingRight = parseFloat(containerStyle.paddingRight) || 0;
-      const containerWidth = container.clientWidth - paddingLeft - paddingRight;
-      const imgRect = img.getBoundingClientRect();
-      const imgWidth = imgRect.width;
-
-      const available = Math.max(220, containerWidth - imgWidth - 40);
-
-      // measure natural width
-      const prev = info.style.maxWidth;
-      info.style.maxWidth = 'none';
-      const natural = info.scrollWidth + 1;
-      info.style.maxWidth = prev || '0px';
-
-      return Math.min(natural, available);
-  });
-}
-
-function computeDesiredWidth(wrapper, img){
-  const container = document.querySelector('.card-container');
-  const containerRect = container.getBoundingClientRect();
-  const imgRect = img.getBoundingClientRect();
-  const available = Math.max(220, containerRect.width - imgRect.width - 40);
-
-  const panel = wrapper.querySelector('.info-panel');
-  const prevMax = wrapper.style.maxWidth;
-  wrapper.style.maxWidth = 'none';
-  const natural = panel.scrollWidth + 1;
-  wrapper.style.maxWidth = prevMax || '0px';
-  return Math.min(natural, available);
-}
-
-function openPanel(wrapper, panel, img){
-  const desired = computeDesiredWidth(wrapper, img);
-  wrapper.style.maxWidth = desired + 'px';
-  wrapper.setAttribute('aria-hidden','false');
-
-  panel.style.transition = `transform ${SLIDE_MS}ms cubic-bezier(0.22,1,0.36,1), opacity ${FADE_MS}ms ease`;
-  panel.style.transform = 'translateX(100%)';
-  panel.style.opacity = '0';
-
-  requestAnimationFrame(() => {
-    panel.classList.add('open');
-  });
-}
-
-function retractPanel(wrapper, panel){
-  panel.classList.remove('open');
-  const onEnd = (e) => {
-    if (e.propertyName === 'transform') {
-      panel.removeEventListener('transitionend', onEnd);
-      wrapper.style.maxWidth = '0px';
-      wrapper.setAttribute('aria-hidden','true');
-    }
-
     function toggleInfo(card) {
       const info = card.querySelector('.info');
-      const img = card.querySelector('img');
-      const isOpen = info.classList.contains('open');
-
-      if (isOpen) {
-        info.classList.remove('open');
-        info.style.maxWidth = '0px';
-        info.setAttribute('aria-hidden', 'true');
-        return;
-  };
-  panel.addEventListener('transitionend', onEnd);
-}
-
-function toggleInfo(card){
-  const wrapper = card.querySelector('.info-wrapper');
-  const panel = wrapper.querySelector('.info-panel');
-  const img = card.querySelector('img');
-
-  const isOpen = panel.classList.contains('open');
-  if (isOpen){
-    retractPanel(wrapper, panel);
-    return;
-  }
-
-  closeAllExcept(wrapper);
-  openPanel(wrapper, panel, img);
-}
-
-let resizeTimer;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    document.querySelectorAll('.info-wrapper').forEach(wrapper => {
-      const panel = wrapper.querySelector('.info-panel');
-      if (panel && panel.classList.contains('open')) {
-        const card = wrapper.closest('.card');
-        const img = card.querySelector('img');
-        const desired = computeDesiredWidth(wrapper, img);
-        wrapper.style.maxWidth = desired + 'px';
-      }
-
-      // close others
-      closeOtherInfos(info);
-
-      // compute desired width and open
-      const desired = computeDesiredWidth(info, img);
-      info.style.maxWidth = '0px';
-      info.setAttribute('aria-hidden', 'false');
-
-      requestAnimationFrame(() => {
-        info.style.maxWidth = desired + 'px';
-        info.classList.add('open');
-      });
+      info.classList.toggle('open');
     }
-
-    // recompute widths for open panels on resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        document.querySelectorAll('.info.open').forEach(info => {
-          const card = info.closest('.card');
-          const img = card.querySelector('img');
-          const desired = computeDesiredWidth(info, img);
-          info.style.maxWidth = desired + 'px';
-        });
-      }, 140);
-    });
   </script>
 
-  }, 120);
-});
-</script>
 </body>
 </html>
