@@ -22,7 +22,6 @@ nav a {
   color: #000;
   background-color: #fff;
   transition: background-color 0.2s ease, color 0.2s ease;
-  font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
@@ -63,33 +62,23 @@ main {
   transition: transform 0.4s ease; 
 } 
 
-/* zoom image when hovering card */
+/* zoom image when hovering the card */
 .staff-card:hover img {
   transform: scale(1.1);
 }
 
-/* === SLIDE DESCRIPTION === */
 .staff-card article { 
   padding: 15px; 
   text-align: center; 
-}
+} 
 
 .staff-card h2 { 
   margin: 10px 0 5px;
 } 
 
+/* hide h4 if you don’t want info */
 .staff-card h4 { 
-  font-weight: normal; 
-  font-size: 14px; 
-  text-align: center; 
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease; 
-}
-
-/* reveal text when hovering card */
-.staff-card:hover article h4 {
-  max-height: 200px; /* increase if you have long bios */
+  display: none; 
 }
 
 footer { 
