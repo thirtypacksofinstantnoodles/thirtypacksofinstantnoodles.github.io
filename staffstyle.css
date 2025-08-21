@@ -1,4 +1,4 @@
-  body { 
+body { 
     background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e); 
     background-attachment: fixed; 
     margin: 0; 
@@ -38,11 +38,11 @@ h1, h3 {
 }
 
 main { 
- display: flex; 
- flex-wrap: wrap; 
- justify-content: center; 
- gap: 30px; 
- padding: 40px 20px; 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  padding: 40px 20px; 
 } 
 
 .staff-card { 
@@ -53,17 +53,19 @@ main {
   overflow: hidden; 
   display: flex; 
   flex-direction: column; 
+  cursor: pointer; /* lets people know it's clickable */
 } 
 
- .staff-card img { 
+.staff-card img { 
   width: 100%; 
   height: 300px; 
   object-fit: cover; 
-  transistion: transform 0.4 ease ;
+  transition: transform 0.4s ease; /* fixed typo */
 } 
 
-.staffcard img:hover{
-  transform:scale(1.1);}
+.staff-card img:hover {
+  transform: scale(1.1); /* zoom effect */
+}
 
 .staff-card article { 
   padding: 15px; 
@@ -80,14 +82,15 @@ main {
   text-align: center; 
   max-height: 0;
   overflow: hidden;
-  transistion: max-height 0.5s ease
+  transition: max-height 0.5s ease; /* fixed typo */
 }
-.staffcard.active article h4{
-  max-height: 200px;
+
+.staff-card.active article h4 {
+  max-height: 200px; /* text slides open */
 }
 
 footer { 
   text-align: center; 
   margin: 30px 0; 
   font-size: 14px; 
-} 
+}
