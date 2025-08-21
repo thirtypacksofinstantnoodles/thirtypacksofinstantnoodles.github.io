@@ -18,7 +18,6 @@ nav a {
   transition: background-color 0.2s ease, color 0.2s ease;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
-
 }
 
 nav a:hover {
@@ -55,4 +54,8 @@ html, body {
 
 .order-card label {
   text-align: center;
+}
+
+.add-ons input[type="checkbox"] {
+  margin-right: 10px;
 }
