@@ -20,7 +20,7 @@ nav a {
   border-radius: 5px;
   text-decoration: none;
   color: #000;
-  background-color: #fff;
+  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
