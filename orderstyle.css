@@ -44,6 +44,7 @@ html, body {
   overflow: hidden; 
   display: flex; 
   flex-direction: column; 
+  text-align: center;
 } 
 
  .order-card img { 
@@ -51,10 +52,6 @@ html, body {
   height: 300px; 
   object-fit: cover; 
 } 
-
-.order-card label {
-  text-align: center;
-}
 
 .add-ons input[type="checkbox"] {
   margin-right: 10px;
