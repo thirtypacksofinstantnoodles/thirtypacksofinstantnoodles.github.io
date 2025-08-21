@@ -123,7 +123,7 @@ nav a:hover, nav a:focus{
 /* NOTE: choose a max-height that comfortably fits your longest description (here 400px) */
 .desc{
   margin-top:12px;
-  background: linear-gradient(180deg, rgba(255,215,120,.05), transparent), var(--panel);
+  background:  hotpink; color: black; }
   border:1px solid rgba(212,175,55,.22);
   border-radius:16px;
   padding:14px 16px;
