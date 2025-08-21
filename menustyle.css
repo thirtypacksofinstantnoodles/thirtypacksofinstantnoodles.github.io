@@ -147,7 +147,7 @@ nav a:hover, nav a:focus{
 /* IMPORTANT: if your description is taller than the number below, increase it */
 .menu-card:hover .desc,
 .menu-card:focus-within .desc {
-  max-height:400px; /* <-- increase this if needed (e.g. 600px) */
+  max-height:900px; /* <-- increase this if needed (e.g. 600px) */
   opacity:1;
   transform:translateY(0);
   border-color: rgba(212,175,55,.35);
