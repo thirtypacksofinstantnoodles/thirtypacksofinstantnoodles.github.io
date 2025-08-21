@@ -120,9 +120,10 @@ nav a:hover, nav a:focus{
 }
 
 /* DESCRIPTION: hidden by default, slides open with max-height transition */
+/* NOTE: choose a max-height that comfortably fits your longest description (here 400px) */
 .desc{
   margin-top:12px;
-  background: linear-gradient(180deg, rgba(255,215,120,.05), transparent), var(--panel);
+  background: linear-gradient(180deg, rgba(255,215,120,.05), transparent), var(--panel);}
   border:1px solid rgba(212,175,55,.22);
   border-radius:16px;
   padding:14px 16px;
@@ -143,15 +144,16 @@ nav a:hover, nav a:focus{
 }
 
 /* Hover / keyboard focus (pure CSS reveal) */
+/* IMPORTANT: if your description is taller than the number below, increase it */
 .menu-card:hover .desc,
 .menu-card:focus-within .desc {
-  max-height:900px; /* adjust if needed */
+  max-height:900px; /* <-- increase this if needed (e.g. 600px) */
   opacity:1;
   transform:translateY(0);
   border-color: rgba(212,175,55,.35);
 }
 
-/* small-screen behavior */
+/* small-screen behavior: show descriptions fully (no sliding) */
 @media (max-width:480px){
   .media{ height:220px }
   .desc{
@@ -161,4 +163,3 @@ nav a:hover, nav a:focus{
     transition:none;
   }
 }
-
