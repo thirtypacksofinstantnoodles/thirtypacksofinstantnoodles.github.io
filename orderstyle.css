@@ -36,6 +36,14 @@ html, body {
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
+main { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  padding: 40px 20px; 
+} 
+
 .order-card { 
   background-color: #fff; 
   border-radius: 10px; 
