@@ -29,7 +29,6 @@ nav a {
 nav a:hover {
   background-color: #000;
   color: #fff;
-  font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
@@ -53,24 +52,25 @@ main {
   overflow: hidden; 
   display: flex; 
   flex-direction: column; 
-  cursor: pointer; /* lets people know it's clickable */
 } 
 
+/* === IMAGE ZOOM === */
 .staff-card img { 
   width: 100%; 
   height: 300px; 
   object-fit: cover; 
-  transition: transform 0.4s ease; /* fixed typo */
+  transition: transform 0.4s ease; 
 } 
 
 .staff-card img:hover {
-  transform: scale(1.1); /* zoom effect */
+  transform: scale(1.1);
 }
 
+/* === SLIDE ON HOVER === */
 .staff-card article { 
   padding: 15px; 
   text-align: center; 
-} 
+}
 
 .staff-card h2 { 
   margin: 10px 0 5px;
@@ -82,11 +82,12 @@ main {
   text-align: center; 
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease; /* fixed typo */
+  transition: max-height 0.5s ease; 
 }
 
-.staff-card.active article h4 {
-  max-height: 200px; /* text slides open */
+/* when hovering the whole card, slide the h4 open */
+.staff-card:hover article h4 {
+  max-height: 200px; /* adjust for longer text */
 }
 
 footer { 
