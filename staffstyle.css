@@ -1,4 +1,5 @@
-  body { 
+/* General page styles */
+body { 
     background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e); 
     background-attachment: fixed; 
     margin: 0; 
@@ -8,7 +9,6 @@
 nav {
   text-align: center;
   margin: 20px 0;
-  font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
@@ -22,15 +22,11 @@ nav a {
   color: #000;
   background-color: #fff;
   transition: background-color 0.2s ease, color 0.2s ease;
-  font-family: arial, sans-serif;
-  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
 nav a:hover {
   background-color: #000;
   color: #fff;
-  font-family: arial, sans-serif;
-  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
 h1, h3 { 
@@ -45,6 +41,7 @@ main {
  padding: 40px 20px; 
 } 
 
+/* Staff cards */
 .staff-card { 
   background-color: #fff; 
   border-radius: 10px; 
@@ -53,13 +50,19 @@ main {
   overflow: hidden; 
   display: flex; 
   flex-direction: column; 
+  transition: transform 0.3s ease;
 } 
 
- .staff-card img { 
+.staff-card img { 
   width: 100%; 
   height: 300px; 
   object-fit: cover; 
+  transition: transform 0.4s ease;
 } 
+
+.staff-card:hover img {
+  transform: scale(1.1);
+}
 
 .staff-card article { 
   padding: 15px; 
@@ -70,14 +73,25 @@ main {
   margin: 10px 0 5px;
 } 
 
+/* Hide info by default */
 .staff-card h4 { 
   font-weight: normal; 
   font-size: 14px; 
   text-align: center; 
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Reveal on hover */
+.staff-card:hover h4 {
+  max-height: 200px;
+  opacity: 1;
 }
 
 footer { 
   text-align: center; 
   margin: 30px 0; 
   font-size: 14px; 
-} 
+}
