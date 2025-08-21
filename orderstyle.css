@@ -52,3 +52,7 @@ html, body {
   height: 300px; 
   object-fit: cover; 
 } 
+
+.order-card label {
+  text-align: center;
+}
