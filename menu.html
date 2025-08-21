@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  
-  <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +18,8 @@
       --ring: rgba(212,175,55,.25);
     }
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    html, body { height: 100%; margin: 0; }
     body {
-      margin: 0;
       background: radial-gradient(1200px 800px at 10% -10%, rgba(212,175,55,.08), transparent 60%),
                  radial-gradient(1000px 600px at 90% 10%, rgba(212,175,55,.06), transparent 60%),
                  var(--bg);
@@ -30,6 +27,27 @@
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.5;
     }
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    nav a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 8px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--gold-3), var(--gold), var(--gold-2));
+      box-shadow: 0 2px 10px rgba(0,0,0,.4);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    nav a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.6), 0 0 12px rgba(212,175,55,.4);
+    }
+
     .wrap { max-width: 1100px; margin: 40px auto 80px; padding: 0 20px; }
     .title {
       font-family: 'Playfair Display', serif;
@@ -58,7 +76,7 @@
       box-shadow: 0 16px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(212,175,55,.18) inset;
       transition: transform .25s ease, box-shadow .25s ease, background-position 1.4s linear;
     }
-    .menu-card:focus .frame, .menu-card:hover .frame { background-position: 100% 0; box-shadow: 0 18px 44px rgba(0,0,0,.5), 0 0 0 2px rgba(212,175,55,.22) inset; }
+    .menu-card:hover .frame { background-position: 100% 0; box-shadow: 0 18px 44px rgba(0,0,0,.5), 0 0 0 2px rgba(212,175,55,.22) inset; }
 
     .media { position: relative; border-radius: 16px; overflow:hidden; height: 320px; background:#111; }
     .media img { width:100%; height:100%; object-fit: cover; transform: scale(1.0); transition: transform .6s ease; display:block; }
@@ -90,23 +108,24 @@
   </style>
 </head>
 <body>
-    <nav>
-      <a href="index.html">About Us</a>
-      <a href="menu.html">Our Menu</a>
-      <a href="sdg.html">SDG's</a>
-      <a href="timeline.html">Restaurant Timeline</a>
-      <a href="staff.html">Our Staff</a>
-      <a href="order.html">Order Now!</a>
-      <a href="feedback.html">Contact Us!</a>
-    </nav>
+
+  <nav>
+    <a href="index.html">About Us</a>
+    <a href="menu.html">Our Menu</a>
+    <a href="sdg.html">SDG's</a>
+    <a href="timeline.html">Restaurant Timeline</a>
+    <a href="staff.html">Our Staff</a>
+    <a href="order.html">Order Now!</a>
+    <a href="feedback.html">Contact Us!</a>
+  </nav>
+
   <div class="wrap">
     <h1 class="title">The Menu</h1>
     <p class="subtitle">Exquisite Ramen</p>
 
-    <div class="menu" id="menu">
+    <div class="menu">
       <div class="col left">
-        <!-- Item 1 -->
-        <div class="menu-card" tabindex="0" role="button" aria-label="Truffle Pasta details">
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/misoramen.png" alt="Miso Ramen" />
@@ -117,8 +136,7 @@
           <div class="desc">Japanese noodle soup with a rich, creamy broth made with miso paste, giving it a nutty, umami-packed flavor.</div>
         </div>
 
-        <!-- Item 3 -->
-        <div class="menu-card" tabindex="0" role="button" aria-label="Golden Sushi details">
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/tonkotsuramen.png" alt="Tonkatsu Ramen" />
@@ -128,8 +146,7 @@
           <div class="desc">Japanese noodle soup dish featuring a rich, creamy pork bone broth, served with thin, straight noodles and premium chashu pork.</div>
         </div>
 
-        <!-- Item 5 -->
-        <div class="menu-card" tabindex="0" role="button" aria-label="Black Gold Burger details">
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/kitsuneudon.png" alt="Kitsune Udon" />
@@ -141,34 +158,31 @@
       </div>
 
       <div class="col right">
-        <!-- Item 2 -->
-        <div class="menu-card" tabindex="0" role="button" aria-label="Wagyu Steak details">
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
-              <img src="food/spaghettibolognese.png" alt="spaghetti bolognese" />
+              <img src="food/spaghettibolognese.png" alt="Spaghetti Bolognese" />
               <div class="label"><span>Spaghetti Bolognese</span><span class="price">RM 27.90</span></div>
             </div>
           </div>
           <div class="desc">Tender spaghetti in slow-cooked meat sauce with tomato and herbs, topped with Parmesan cheese.</div>
         </div>
 
-        <!-- Item 4 -->
-        <div class="menu-card" tabindex="0" role="button" aria-label="Lobster Thermidor details">
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
-              <img src="food/agliolio" alt="Spaghetti Aglio Olio" />
+              <img src="food/agliolio.png" alt="Spaghetti Aglio Olio" />
               <div class="label"><span>Spaghetti Aglio Olio</span><span class="price">RM 25.50</span></div>
             </div>
           </div>
           <div class="desc">Spaghetti sautéed with garlic, olive oil, chili flakes, parsley, and grated cheese.</div>
         </div>
 
-        <!-- Item 6 -->
-        <div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
-              <img src="food/spaghetticarbonara" alt="spaghetti carbonara" />
-              <div class="label"><span>spaghetti carbonara</span><span class="price">RM 26.60</span></div>
+              <img src="food/spaghetticarbonara.png" alt="Spaghetti Carbonara" />
+              <div class="label"><span>Spaghetti Carbonara</span><span class="price">RM 26.60</span></div>
             </div>
           </div>
           <div class="desc">Creamy sauce with raw egg, guanciale, Pecorino Romano, and black pepper.</div>
@@ -177,213 +191,5 @@
     </div>
   </div>
 
-  <div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/Screenshot 2025-08-21 132444.png" alt="Tomato instant noodles" />
-              <div class="label"><span>Tomato instant noodles</span><span class="price">RM 19.99</span></div>
-            </div>
-          </div>
-          <div class="desc">A humble bowl of tomato instant noodles elevated into a symphony of rich umami, silky broth, and delicate tang</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/prawnnoodles.png" alt="Prawn noodles" />
-              <div class="label"><span>Prawn noodles</span><span class="price">RM 29.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Instant noodles in prawn-infused broth, topped with prawns and garnishes.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/overbakedchickencheesynoodles.png" alt="overbaked chicken cheesy noodles" />
-              <div class="label"><span>Overbaked Chicken Cheesy Noodles</span><span class="price">RM 26.99</span></div>
-            </div>
-          </div>
-          <div class="desc">Overbaked chicken cheesy noodles, a decadent harmony of tender poultry, silken pasta, and molten cheese, layered with warmth and quiet grandeur.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/traditionalcupinstantnoodles.png" alt="traditionalcupinstantnoodles" />
-              <div class="label"><span>Traditional cup instant noodles</span><span class="price">RM 6.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Traditional cup instant noodles, a timeless vessel of steam and solace, where simple strands and savory broth whisper the poetry of everyday comfort.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/vanillaicecream.jpg" alt="vanilla ice cream" />
-              <div class="label"><span>Vanilla Ice cream</span><span class="price">RM 12.50</span></div>
-            </div>
-          </div>
-          <div class="desc">Hand-churned vanilla ice cream with Normandy cream and Madagascar vanilla.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/chocolateicecream.jpg" alt="chocolate ice cream" />
-              <div class="label"><span>chocolate ice cream</span><span class="price">RM 13.10</span></div>
-            </div>
-          </div>
-          <div class="desc">Dark chocolate ice cream made with Ecuadorian chocolate and sea salt.
-</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/strawberryicecream.jpg" alt="strawberryicecream" />
-              <div class="label"><span>Strawberry ice cream</span><span class="price">RM 12.70</span></div>
-            </div>
-          </div>
-          <div class="desc">Made with heirloom strawberries and folded into crème anglaise.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/cheesecake.jpg" alt="cheesecake" />
-              <div class="label"><span>cheesecake/span><span class="price">RM21.70 </span></div>
-            </div>
-          </div>
-          <div class="desc">Cheesecake, a velvet cloud of cream and richness upon a delicate crust, where sweetness lingers like a whispered promise.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/chocolatecake.jpg" alt="chocolate cake" />
-              <div class="label"><span>chocolate cake</span><span class="price">RM 22.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Chocolate cake, a luscious crescendo of moist cocoa richness and silken sweetness that lingers like velvet on the palate.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/creampuff.jpg" alt="Trio creampuffs" />
-              <div class="label"><span>Trio creampuff</span><span class="price">RM 16.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Creampuff, a fragile golden shell that yields to a cloud of airy cream, dissolving in a fleeting moment of sweetness and light.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/chocolatepudding.jpg" alt="chocolate pudding" />
-              <div class="label"><span>chocolate pudding</span><span class="price">RM 35.50</span></div>
-            </div>
-          </div>
-          <div class="desc">Chocolate fudge pudding, a molten embrace of dense cocoa richness and silken warmth, unfolding with every spoonful like liquid velvet.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/spaghetticarbonara" alt="spaghetti carbonara" />
-              <div class="label"><span>spaghetti carbonara</span><span class="price">RM 26.60</span></div>
-            </div>
-          </div>
-          <div class="desc">Creamy sauce with raw egg, guanciale, Pecorino Romano, and black pepper.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/spaghetticarbonara" alt="spaghetti carbonara" />
-              <div class="label"><span>spaghetti carbonara</span><span class="price">RM 26.60</span></div>
-            </div>
-          </div>
-          <div class="desc">Creamy sauce with raw egg, guanciale, Pecorino Romano, and black pepper.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/spaghetticarbonara" alt="spaghetti carbonara" />
-              <div class="label"><span>spaghetti carbonara</span><span class="price">RM 26.60</span></div>
-            </div>
-          </div>
-          <div class="desc">Creamy sauce with raw egg, guanciale, Pecorino Romano, and black pepper.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="menu-card" tabindex="0" role="button" aria-label="Tiramisu Royale details">
-          <div class="frame">
-            <div class="media">
-              <img src="food/spaghetticarbonara" alt="spaghetti carbonara" />
-              <div class="label"><span>spaghetti carbonara</span><span class="price">RM 26.60</span></div>
-            </div>
-          </div>
-          <div class="desc">Creamy sauce with raw egg, guanciale, Pecorino Romano, and black pepper.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
 </body>
 </html>
