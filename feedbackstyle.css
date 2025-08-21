@@ -40,5 +40,8 @@ body {
   background-attachment: fixed;'
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+}
 
+h1, h3 {
+  text-align: center;
 }
