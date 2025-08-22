@@ -46,6 +46,12 @@ h1, h3 {
   text-align: center;
 }
 
+.custom-fieldset {
+  width: 350px;
+  border: 1px solid #ccc;
+  padding: 10px;   
+}
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px; 
