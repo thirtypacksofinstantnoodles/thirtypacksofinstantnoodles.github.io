@@ -1,91 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <title>
-      Payment
-    </title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="paymentstyle.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="paymentstyle.css" />
   </head>
   <body>
     <header>
       <nav>
         <a href="index.html">About Us</a>
-        <a href="menu.html">Our menu</a>
+        <a href="menu.html">Our Menu</a>
         <a href="sdg.html">SDG's</a>
         <a href="timeline.html">Restaurant Timeline</a>
         <a href="staff.html">Our Staff</a>
         <a href="order.html">Order Now!</a>
         <a href="feedback.html">Contact Us!</a>
       </nav>
-      <h2>
-        Please scroll down to proceed to payment
-      </h2>
+      <h2>Please scroll down to proceed to payment</h2>
     </header>
+
     <main>
-      <fieldset>
-        <legend>Personal Details</legend>
+      <form>
+        <fieldset class="custom-width">
+          <legend>Personal Details</legend>
+          <div>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="JJ" />
+          </div>
+          <br />
+          <div>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Pang" />
+          </div>
+          <br />
+          <div>
+            <label for="pnum">Phone Number:</label>
+            <input type="text" id="pnum" name="pnum" placeholder="+60" />
+          </div>
+        </fieldset>
+
+        <fieldset class="custom-width">
+          <legend>Property Type</legend>
+
+          <input type="radio" id="house" name="property_type" value="house" />
+          <label for="house">House</label><br />
+
+          <input type="radio" id="apartment" name="property_type" value="apartment" />
+          <label for="apartment">Apartment</label><br />
+
+          <!-- House Fields -->
+          <div id="houseFields" class="hidden">
+            <label for="street_number">Street Number:</label><br />
+            <input type="text" id="street_number" name="house_details" /><br />
+            <label for="street_name">Street Name:</label><br />
+            <input type="text" id="street_name" name="house_details" /><br />
+            <label for="region">Region:</label><br />
+            <input type="text" id="region" name="house_details" /><br />
+            <label for="town_city">Town/City:</label><br />
+            <input type="text" id="town_city" name="house_details" /><br />
+            <label for="state">State:</label><br />
+            <input type="text" id="state" name="house_details" /><br />
+          </div>
+
+          <!-- Apartment Fields -->
+          <div id="apartmentFields" class="hidden">
+            <label for="block_number">Block Number:</label><br />
+            <input type="text" id="block_number" name="apartment_details" /><br />
+            <label for="unit_number">Unit Number:</label><br />
+            <input type="text" id="unit_number" name="apartment_details" /><br />
+          </div>
+        </fieldset>
+
+        <br />
+        <label for="payment">Payment Method:</label>
+        <select name="payment" id="payment">
+          <option value="">Please choose an option to pay</option>
+          <option value="1">Cash</option>
+          <option value="2">Credit/Debit</option>
+          <option value="3">Apple Pay</option>
+          <option value="4">TNG</option>
+          <option value="5">Maybank 2 U</option>
+          <option value="6">Paypal</option>
+          <option value="7">Wise</option>
+          <option value="8">Boost</option>
+        </select>
+        <br /><br />
+
         <div>
-          <label for="fname">First Name:</label>
-          <input type="text" id="fname" name="fname" placeholder="JJ">
-        </div>
-        <br>
-        <div>
-          <label for="lname">Last Name:</label>
-          <input type="text" id="lname" name="lname" placeholder="Pang">
-        </div>
-        <br>
-        <div>
-          <label for="pnum">Phone Number:</label>
-          <input type="tel" id="pnum" name="pnum" placeholder="+60">
-        </div>
-        <br>
-        <div>
-      </fieldset>
-      <fieldset>
-          <legend>Property type</legend>
-          <input type="radio" id="house" name="property_type" value="house">
-          <label for="house">House</label><br>
-          <label for="street number">Street Number: </label><br>
-          <input type="number" id="street number" name="house_details" value="street number"><br>
-          <label for="street name">Street Name: </label><br>
-          <input type="text" id="street name" name="house_details" value=""><br>
-          <label for="region">Region: </label><br>
-          <input type="text" id="region" name="house_details" value=""><br>
-          <label for="town/city">Town/City: </label><br>
-          <input type="text" id="town/city" name="house_details" value=""><br>
-          <label for="state">State: </label><br>
-          <input type="text" id="state" name="house_details" value=""><br>
-          <input type="radio" id="apartment" name="property_type" value="">
-          <label for="apartment">Apartment</label><br>
-          <label for="block number">Block Number:</label><br>
-          <input type="number" id="block number" name="apartment_details" value=""><br>
-          <label for="unit number">Unit Number:</label><br>
-          <input type="number" id="Unit number" name="apartment_details" value=""><br>
-      </fieldset>
-        <br>
-      <select name="payment" id="payment">
-        <option value="">Please choose an option to pay</option>
-        <option value="1">Cash</option>
-        <option value="2">Credit/Debit</option>
-        <option value="3">Apple Pay</option>
-        <option value="4">TNG</option>
-        <option value="5">Maybank 2 U</option>
-        <option value="5">Paypal</option>
-        <option value="6">Wise</option>
-        <option value="7">Boost</option>
-      </select>
-        <br>
-        <div>
-          <input type="button" onclick="alert('Order Complete!')" value="Submit Order">
-          <input type="submit" value="Submit">
+          <input type="button" onclick="alert('Order Complete!')" value="Submit Order" />
         </div>
       </form>
     </main>
+
+    <footer>
+      <small>Copyright &copy; 2025</small>
+    </footer>
+
+    <script src="payment.js"></script>
   </body>
-  <footer>
-    <small>Copywright &copy; 2025</small>
-  </footer>
 </html>
