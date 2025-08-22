@@ -4,10 +4,12 @@ function addToCart(form) {
   const itemName = form.getAttribute('data-name');
   const basePrice = parseFloat(form.getAttribute('data-price'));
   const quantity = parseInt(form.querySelector('input[type="number"]').value);
+
   if (quantity <= 0) {
     alert('Please select a quantity greater than 0.');
     return;
   }
+
   let addons = [];
   let addonsPrice = 0;
   form.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
@@ -17,7 +19,12 @@ function addToCart(form) {
     }
   });
 
-  let found = cart.find(item => item.name === itemName && JSON.stringify(item.addons) === JSON.stringify(addons));
+  // Check if item with same addons already exists
+  let found = cart.find(item =>
+    item.name === itemName &&
+    JSON.stringify(item.addons.sort()) === JSON.stringify(addons.sort())
+  );
+
   if (found) {
     found.quantity += quantity;
     found.totalPrice += quantity * (basePrice + addonsPrice);
@@ -29,6 +36,7 @@ function addToCart(form) {
       totalPrice: quantity * (basePrice + addonsPrice)
     });
   }
+
   updateCartDisplay();
 }
 
@@ -61,3 +69,27 @@ function updateCartDisplay() {
 
   document.getElementById('total-price').textContent = total.toFixed(2);
 }
+
+// ✅ Checkout button handler
+document.addEventListener('DOMContentLoaded', function () {
+  const checkoutBtn = document.getElementById('checkout-button');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+
+      // ✅ DEBUG: Show cart contents before checkout
+      console.log('Cart being checked out:', cart);
+
+      // 👉 Do whatever you want with the cart here
+      // Example: send to Firebase or move to payment page
+
+      alert('Proceeding to checkout with your cart!');
+      
+      // Optional: Redirect
+      // window.location.href = 'payment.html';
+    });
+  }
+});
