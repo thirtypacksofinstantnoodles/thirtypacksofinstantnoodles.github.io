@@ -1,3 +1,4 @@
+/* Basic styles */
 nav {
   text-align: center;
   margin: 20px 0;
@@ -34,4 +35,50 @@ html, body {
   margin: 0;
   font-family: arial, sans-serif;
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
+}
+
+header, footer {
+  padding: 10px;
+  text-align: center;
+}
+main {
+  padding: 20px;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="button"] {
+  padding: 10px 20px;
+  margin-top: 15px;
+}
+
+/* Hidden class for toggling */
+.hidden {
+  display: none;
+}
+
+.custom-width {
+  border-width: 3px;
+  border-style: dashed;
+  border-color: black;
+  padding: 20px;
+  margin-bottom: 20px;
 }
