@@ -35,6 +35,10 @@ html, body {
   background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
 }
 
+h1, h2 {
+  display: center;
+}
+  
 /* MAIN SECTION */
 main { 
   display: flex; 
