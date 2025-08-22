@@ -7,106 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0a0a0c;
-      --panel: #0f0f14;
-      --ink: #f5f5f7;
-      --muted: #c7c7cf;
-      --gold: #d4af37;
-      --gold-2: #b88900;
-      --gold-3: #ffd56a;
-      --ring: rgba(212,175,55,.25);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
-    body {
-      background: radial-gradient(1200px 800px at 10% -10%, rgba(212,175,55,.08), transparent 60%),
-                 radial-gradient(1000px 600px at 90% 10%, rgba(212,175,55,.06), transparent 60%),
-                 var(--bg);
-      color: var(--ink);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.5;
-    }
-    nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-    nav a {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 8px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      color: var(--ink);
-      background: linear-gradient(135deg, var(--gold-3), var(--gold), var(--gold-2));
-      box-shadow: 0 2px 10px rgba(0,0,0,.4);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    nav a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,.6), 0 0 12px rgba(212,175,55,.4);
-    }
-
-    .wrap { max-width: 1100px; margin: 40px auto 80px; padding: 0 20px; }
-    .title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 6vw, 56px);
-      text-align: center;
-      letter-spacing: .04em;
-      margin: 10px 0 30px;
-      background: linear-gradient(90deg, var(--gold-3), var(--gold), var(--gold-2));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      text-shadow: 0 0 30px rgba(212,175,55,.25);
-    }
-    .subtitle { text-align:center; color: var(--muted); margin-bottom: 36px; }
-
-    .menu { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
-    @media (min-width: 960px) { .menu { grid-template-columns: 1fr 1fr; gap: 36px; } }
-
-    .col { display: grid; gap: 36px; align-content: start; }
-    @media (min-width: 960px) { .col.right .menu-card { margin-top: 26px; } }
-
-    .menu-card { cursor: pointer; }
-
-    .frame {
-      position: relative; border-radius: 20px; padding: 4px; overflow: hidden;
-      background: linear-gradient(130deg, var(--gold) 0%, var(--gold-2) 35%, var(--gold-3) 55%, var(--gold) 100%);
-      background-size: 220% 220%;
-      box-shadow: 0 16px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(212,175,55,.18) inset;
-      transition: transform .25s ease, box-shadow .25s ease, background-position 1.4s linear;
-    }
-    .menu-card:hover .frame { background-position: 100% 0; box-shadow: 0 18px 44px rgba(0,0,0,.5), 0 0 0 2px rgba(212,175,55,.22) inset; }
-
-    .media { position: relative; border-radius: 16px; overflow:hidden; height: 320px; background:#111; }
-    .media img { width:100%; height:100%; object-fit: cover; transform: scale(1.0); transition: transform .6s ease; display:block; }
-    .menu-card:hover .media img { transform: scale(1.06); }
-
-    .label {
-      position: absolute; inset-inline: 0; bottom: 0; padding: 16px 18px; display:flex; justify-content: space-between; align-items: center; gap: 12px;
-      background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.35), transparent);
-      color: var(--gold-3); font-weight: 600; text-shadow: 0 2px 14px rgba(0,0,0,.7);
-    }
-    .price { color: var(--ink); background: rgba(212,175,55,.18); padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(212,175,55,.35); backdrop-filter: blur(2px); }
-
-    .desc {
-      margin-top: 12px; background: linear-gradient(180deg, rgba(255,215,120,.05), transparent), var(--panel);
-      border: 1px solid rgba(212,175,55,.22);
-      border-radius: 16px; padding: 14px 16px;
-      color: var(--muted);
-      box-shadow: 0 10px 28px rgba(0,0,0,.35);
-
-      max-height: 0; overflow: hidden; opacity: 0; transform: translateY(-6px);
-      transition: max-height .45s ease, opacity .35s ease, transform .35s ease, border-color .2s ease;
-    }
-    .menu-card.open .desc { max-height: 240px; opacity: 1; transform: translateY(0); border-color: rgba(212,175,55,.35); }
-
-    .menu-card:focus { outline: none; }
-    .menu-card:focus .frame { box-shadow: 0 18px 44px rgba(0,0,0,.55), 0 0 0 3px var(--ring), 0 0 0 2px rgba(212,175,55,.22) inset; }
-
-    .badge { position:absolute; top:10px; left:10px; background: rgba(0,0,0,.6); color: var(--gold-3); border: 1px solid rgba(212,175,55,.38); padding: 4px 8px; border-radius: 999px; font-size: 12px; letter-spacing:.04em; }
-  </style>
+  <title>Menu</title>
 </head>
 <body>
 
@@ -122,9 +23,12 @@
 
   <div class="wrap">
     <h1 class="title">The Menu</h1>
-    <p class="subtitle">Exquisite Ramen</p>
+    <p class="subtitle">Exquisite Ramen & Desserts</p>
 
+    <!-- Grid container -->
     <div class="menu">
+
+      <!-- LEFT COLUMN -->
       <div class="col left">
         <div class="menu-card" tabindex="0">
           <div class="frame">
@@ -140,6 +44,69 @@
         <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
+              <img src="food/kitsuneudon.png" alt="Kitsune Udon" />
+              <div class="label"><span>Kitsune Udon</span><span class="price">RM 29.90</span></div>
+            </div>
+          </div>
+          <div class="desc">Popular dish featuring thick udon noodles in a warm dashi broth, topped with sweet, deep-fried tofu (aburaage).</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/overbakedchickencheesynoodles.jpg" alt="Overbaked chicken cheesy noodles" />
+              <div class="label"><span>Overbaked Chicken Cheesy Noodles</span><span class="price">RM 26.99</span></div>
+            </div>
+          </div>
+          <div class="desc">Golden, overbaked chicken and gooey cheese meld with tender noodles for a comforting, savory bite.</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/instantnoodlecover.png" alt="Traditional cup instant noodles" />
+              <div class="label"><span>Traditional Cup Instant Noodles</span><span class="price">RM 6.90</span></div>
+            </div>
+          </div>
+          <div class="desc">Classic cup noodles with tender strands in a savory, nostalgic broth that warms and satisfies with every sip.</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/vanillaicecream.jpg" alt="Vanilla ice cream" />
+              <div class="label"><span>Vanilla Ice Cream</span><span class="price">RM 12.50</span></div>
+            </div>
+          </div>
+          <div class="desc">Creamy vanilla ice cream, with a pure, delicate sweetness and a silky, melt-in-your-mouth texture.</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/chocolateicecream.jpg" alt="Chocolate ice cream" />
+              <div class="label"><span>Chocolate Ice Cream</span><span class="price">RM 13.10</span></div>
+            </div>
+          </div>
+          <div class="desc">Rich chocolate ice cream, decadently smooth with deep, indulgent cocoa flavor in every velvety spoonful.</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/chocolatecake.jpg" alt="Chocolate cake" />
+              <div class="label"><span>Chocolate Cake</span><span class="price">RM 22.90</span></div>
+            </div>
+          </div>
+          <div class="desc">Moist chocolate cake layered with rich, velvety cocoa, offering a deep, indulgent sweetness in every bite.</div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col right">
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
               <img src="food/tonkotsuramen.png" alt="Tonkatsu Ramen" />
               <div class="label"><span>Tonkatsu Ramen</span><span class="price">RM 26.90</span></div>
             </div>
@@ -147,103 +114,6 @@
           <div class="desc">Japanese noodle soup dish featuring a rich, creamy pork bone broth, served with thin, straight noodles and premium chashu pork.</div>
         </div>
 
-        <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/kitsuneudon.png" alt="Kitsune Udon" />
-              <div class="label"><span>Kitsune Udon</span><span class="price">RM 29.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Popular dish featuring thick udon noodles in a warm dashi broth, topped with sweet, deep-fried tofu (aburaage).</div>
-        </div>
-      </div>
-
-       <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/tomatoinstantnoodles.png" alt="tomato instant noodles" />
-              <div class="label"><span>Tomato instantn noodles</span><span class="price">RM 19.99</span></div>
-            </div>
-          </div>
-          <div class="desc">Springy noodles bathe in a vibrant, umami-rich tomato broth, elevating simple comfort to refined elegance.</div>
-        </div>
-        
-  <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/prawnnoodles.png" alt="Prawn noodles" />
-              <div class="label"><span>Prawn noodles</span><span class="price">RM 29.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Tender noodles immersed in a rich, savory prawn broth, where oceanic sweetness meets subtle spice.</div>
-        </div>
-
-      <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/vanillaicecream.jpg" alt="Vanilla ice cream" />
-              <div class="label"><span>Vanilla ice cream</span><span class="price">RM 12.50</span></div>
-            </div>
-          </div>
-          <div class="desc">Creamy vanilla ice cream, with a pure, delicate sweetness and a silky, melt-in-your-mouth texture.</div>
-        </div>
-    
-  <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/chocolateicecream.jpg" alt="chocolate ice cream" />
-              <div class="label"><span> Chocolate ice cream</span><span class="price">RM 13.10</span></div>
-            </div>
-          </div>
-          <div class="desc">Rich chocolate ice cream, decadently smooth with deep, indulgent cocoa flavor in every velvety spoonful.</div>
-        </div>
-    
-  <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/strawberryicecream.jpg" alt="Strawberry ice cream" />
-              <div class="label"><span>Strawberry ice cream</span><span class="price">RM 12.70</span></div>
-            </div>
-          </div>
-          <div class="desc">Lush strawberry ice cream, bursting with natural fruit sweetness and a creamy, velvety texture.</div>
-        </div>
-
-      <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/chocolatepudding.jpg" alt="Chocolate pudding" />
-              <div class="label"><span>Chocolate pudding</span><span class="price">RM 35.50</span></div>
-            </div>
-          </div>
-          <div class="desc">Decadent chocolate pudding, luxuriously rich and velvety, with an intense cocoa punch and a melt-in-your-mouth texture.</div>
-        </div>
-
-  <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/strawberrypudding.jpg" alt="Strawberry pudding" />
-              <div class="label"><span>Strawberry pudding</span><span class="price">RM 31.70</span></div>
-            </div>
-          </div>
-          <div class="desc">Creamy strawberry pudding, delightfully smooth with a fresh, fruity sweetness that lingers on the palate.</div>
-        </div>
-
-        <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/eggtart.png" alt="Egg Tart" />
-              <div class="label"><span>Quad Egg Tart</span><span class="price">RM 25.50</span></div>
-            </div>
-          </div>
-          <div class="desc">Golden quad egg tart with a silky, custardy filling nestled in a crisp, buttery pastry shell.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-      
-  
-    
-      <div class="col right">
         <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
@@ -273,31 +143,28 @@
           </div>
           <div class="desc">Creamy sauce with raw egg, guanciale, Pecorino Romano, and black pepper.</div>
         </div>
-      
- 
-  <div class="menu-card" tabindex="0">
+
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
-              <img src="food/overbakedchickencheesynoodles.jpg" alt="Overbaked chicken cheesy noodles" />
-              <div class="label"><span>Overbaked chicken cheesy noodles</span><span class="price">RM 26.99</span></div>
+              <img src="food/tomatoinstantnoodles.png" alt="Tomato instant noodles" />
+              <div class="label"><span>Tomato Instant Noodles</span><span class="price">RM 19.99</span></div>
             </div>
           </div>
-          <div class="desc">Golden, overbaked chicken and gooey cheese meld with tender noodles for a comforting, savory bite.</div>
-        </div>
-  
-  <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/instantnoodlecover.png" alt="Traditional cup instant noodles" />
-              <div class="label"><span>Traditional cup instant noodles</span><span class="price">RM 6.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Classic cup noodles with tender strands in a savory, nostalgic broth that warms and satisfies with every sip.</div>
+          <div class="desc">Springy noodles bathe in a vibrant, umami-rich tomato broth, elevating simple comfort to refined elegance.</div>
         </div>
 
-        
-    
-  <div class="menu-card" tabindex="0">
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/prawnnoodles.png" alt="Prawn noodles" />
+              <div class="label"><span>Prawn Noodles</span><span class="price">RM 29.90</span></div>
+            </div>
+          </div>
+          <div class="desc">Tender noodles immersed in a rich, savory prawn broth, where oceanic sweetness meets subtle spice.</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/cheesecake.jpg" alt="Cheesecake" />
@@ -306,29 +173,38 @@
           </div>
           <div class="desc">Decadent cheesecake with a silky, creamy filling atop a buttery, crisp crust, offering a perfect balance of sweetness and tang.</div>
         </div>
-      
-  <div class="menu-card" tabindex="0">
-          <div class="frame">
-            <div class="media">
-              <img src="food/chocolatecake.jpg" alt="Chocolate cake" />
-              <div class="label"><span>Chocolate cake</span><span class="price">RM22.90</span></div>
-            </div>
-          </div>
-          <div class="desc">Moist chocolate cake layered with rich, velvety cocoa, offering a deep, indulgent sweetness in every bite.</div>
-        </div>
-      
-  <div class="menu-card" tabindex="0">
+
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/creampuff.jpg" alt="Trio creampuffs" />
-              <div class="label"><span>Trio creampuffs</span><span class="price">RM 16.90</span></div>
+              <div class="label"><span>Trio Creampuffs</span><span class="price">RM 16.90</span></div>
             </div>
           </div>
           <div class="desc">A delicate trio of cream puffs, each filled with luscious, airy creams that melt effortlessly, crowned by a light, golden pastry shell.</div>
         </div>
-      
-  
-  <div class="menu-card" tabindex="0">
+
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/chocolatepudding.jpg" alt="Chocolate pudding" />
+              <div class="label"><span>Chocolate Pudding</span><span class="price">RM 35.50</span></div>
+            </div>
+          </div>
+          <div class="desc">Decadent chocolate pudding, luxuriously rich and velvety, with an intense cocoa punch and a melt-in-your-mouth texture.</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/strawberrypudding.jpg" alt="Strawberry pudding" />
+              <div class="label"><span>Strawberry Pudding</span><span class="price">RM 31.70</span></div>
+            </div>
+          </div>
+          <div class="desc">Creamy strawberry pudding, delightfully smooth with a fresh, fruity sweetness that lingers on the palate.</div>
+        </div>
+
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/chocolatesouffle.jpg" alt="Chocolate Souffle" />
@@ -337,31 +213,42 @@
           </div>
           <div class="desc">Airy chocolate soufflé, light yet indulgent, with a molten, rich center that melts exquisitely on the tongue.</div>
         </div>
-      
-  <div class="menu-card" tabindex="0">
+
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/vanillasouffle.png" alt="Vanilla Souffle" />
-              <div class="label"><span>Classic Vanilla souffle</span><span class="price">RM 20.90</span></div>
+              <div class="label"><span>Classic Vanilla Souffle</span><span class="price">RM 20.90</span></div>
             </div>
           </div>
           <div class="desc">Light, airy vanilla soufflé with a delicate, sweet aroma and a melt-in-the-mouth, cloud-like texture.</div>
-         </div>
-    
+        </div>
 
+        <div class="menu-card" tabindex="0">
+          <div class="frame">
+            <div class="media">
+              <img src="food/eggtart.png" alt="Quad Egg Tart" />
+              <div class="label"><span>Quad Egg Tart</span><span class="price">RM 25.50</span></div>
+            </div>
+          </div>
+          <div class="desc">Golden quad egg tart with a silky, custardy filling nestled in a crisp, buttery pastry shell.</div>
+        </div>
 
-   <div class="menu-card" tabindex="0">
+        <div class="menu-card" tabindex="0">
           <div class="frame">
             <div class="media">
               <img src="food/macarons.jpg" alt="Macarons" />
-              <div class="label"><span>Macarons(Chocolate, Lemon, Strawberry, Matcha)</span><span class="price">RM 21.50</span></div>
+              <div class="label"><span>(Chocolate, Lemon, Strawberry, Matcha)</span><span class="price">RM 21.50</span></div>
             </div>
           </div>
           <div class="desc">A colorful quartet of macarons—Chocolate, Lemon, Strawberry, and Matcha—each with a delicate, crisp shell and a luscious, flavorful filling that delights the palate.</div>
         </div>
-      </div>
-    </div>
-  </div>
+
+      </div> <!-- end right column -->
+
+    </div> <!-- end menu grid -->
+
+  </div> <!-- end wrap -->
 
 </body>
 </html>
