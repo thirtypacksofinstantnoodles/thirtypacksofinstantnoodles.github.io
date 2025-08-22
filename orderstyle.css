@@ -45,6 +45,10 @@ main {
   padding: 40px 20px; 
 }
 
+h1, h2 {
+  text-align: center;
+}
+
 /* ORDER CARD */
 .order-card { 
   background-color: #fff; 
