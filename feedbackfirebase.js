@@ -11,63 +11,63 @@ const firebaseConfig = {
   measurementId: "G-T6L1X7NGGD"
 };
 
-// Initialize Firebase
+// Initialize Firebase app and Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 console.log("Firebase initialized", app);
 
-// --- Feedback Form Submission Logic ---
-const feedbackForm = document.querySelector('form'); // Or use getElementById if your form has an ID
+// Select your form by its ID or element name
+const feedbackForm = document.querySelector('form');
 
-if (feedbackForm) { // Check if the feedback form exists on the page
-  feedbackForm.addEventListener('submit', (event) => {
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    // Get values from radio inputs named 'help'
     const helpWithOptions = feedbackForm.querySelectorAll('input[name="help"]');
     let helpWith = '';
-    for (const radio of helpWithOptions) {
-      if (radio.checked) {
-        helpWith = radio.value;
-        break;
-      }
-    }
+    helpWithOptions.forEach(radio => {
+      if (radio.checked) helpWith = radio.value;
+    });
 
+    // Get values from radio inputs named 'reason'
     const reasonOptions = feedbackForm.querySelectorAll('input[name="reason"]');
     let reason = '';
-    for (const radio of reasonOptions) {
-      if (radio.checked) {
-        reason = radio.value;
-        break;
-      }
-    }
+    reasonOptions.forEach(radio => {
+      if (radio.checked) reason = radio.value;
+    });
 
-    const comments = feedbackForm.querySelector('#comments').value;
-    const name = feedbackForm.querySelector('#name').value;
-    const phoneNumber = feedbackForm.querySelector('#pnumber').value;
-    const email = feedbackForm.querySelector('#email').value;
+    // Get values from other inputs by ID
+    const comments = feedbackForm.querySelector('#comments')?.value || '';
+    const name = feedbackForm.querySelector('#name')?.value || '';
+    const phoneNumber = feedbackForm.querySelector('#pnumber')?.value || '';
+    const email = feedbackForm.querySelector('#email')?.value || '';
 
+    // Prepare data object
     const formData = {
-      helpWith: helpWith,
-      reason: reason,
-      comments: comments,
-      name: name,
-      phoneNumber: phoneNumber,
-      email: email,
+      helpWith,
+      reason,
+      comments,
+      name,
+      phoneNumber,
+      email,
       timestamp: new Date()
     };
 
-    addDoc(collection(db, "feedback"), formData)
-      .then((docRef) => {
-        console.log("Feedback document written with ID: ", docRef.id);
-        feedbackForm.reset();
-        alert("Thank you for your feedback!");
-      })
-      .catch((error) => {
-        console.error("Error adding feedback document: ", error);
-        alert("There was an error submitting your feedback. Please try again.");
-      });
+    try {
+      // Add data to Firestore 'feedback' collection
+      const docRef = await addDoc(collection(db, "feedback"), formData);
+      console.log("Feedback document written with ID: ", docRef.id);
+
+      // Reset the form and notify user
+      feedbackForm.reset();
+      alert("Thank you for your feedback!");
+    } catch (error) {
+      console.error("Error adding feedback document: ", error);
+      alert("There was an error submitting your feedback. Please try again.");
+    }
   });
+} else {
+  console.warn("Feedback form not found on the page.");
 }
-
-
