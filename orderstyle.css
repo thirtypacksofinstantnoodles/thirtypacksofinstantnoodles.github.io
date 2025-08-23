@@ -39,31 +39,84 @@ main {
   padding: 40px 20px;
 }
 
+/* SECTION HEADINGS */
+section {
+  width: 100%;
+  max-width: 1200px;
+}
+
+section h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* HEADER */
 header {
   text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+header h2 {
+  font-size: 20px;
+  font-weight: normal;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* CARD STYLE FOR EACH ITEM */
 .order-card {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   width: 300px;
-  overflow: hidden;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .order-card img {
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.order-card label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.order-card input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  margin: 10px 0;
 }
 
 /* ADD-ONS */
+.add-ons {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+  width: 100%;
+}
+
 .add-ons input[type="checkbox"] {
-  margin-right: 10px;
+  margin-right: 8px;
+}
+
+.add-ons label {
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 /* BUTTON INSIDE CARD */
@@ -71,8 +124,9 @@ header {
   width: fit-content;
   padding: 8px 16px;
   font-size: 14px;
-  margin: 10px auto;
+  margin: 15px auto 0;
   display: block;
+  background-color: #ff9a9e;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -80,7 +134,7 @@ header {
 }
 
 .order-card button:hover {
-  /* Keep existing hover color logic if defined elsewhere */
+  background-color: #fcb69f;
 }
 
 /* CART */
@@ -90,19 +144,37 @@ header {
   border-radius: 10px;
   width: 100%;
   max-width: 400px;
-  background: linear-gradient(to right, #ffecd2, #fcb69f, #ff9a9e);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+#cart h2 {
+  margin-top: 0;
+}
+
+#cart ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+#total-price {
+  font-weight: bold;
 }
 
 /* CHECKOUT BUTTON */
 #checkout-button {
   display: inline-block;
   padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  color: white;
   background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#checkout-button:hover {
+  background-color: #0056b3;
 }
 
 /* FOOTER */
