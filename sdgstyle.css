@@ -93,18 +93,20 @@ nav a:hover {
 }
 
 .info {
-  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-40px);
   overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.5s ease;
-  padding: 0 15px;
+  transition:
+    max-width 0.8s cubic-bezier(0.2, 0.9, 0.3, 1),
+    transform 0.72s cubic-bezier(0.2, 0.9, 0.3, 1),
+    opacity 0.42s ease 0.06s;
 }
 
-.info.open {
-  max-height: 500px; /* allow more space for text */
-  padding: 15px;
-}
-
-.info p {
-  margin: 0;
-  line-height: 1.6;
+/* When hovering over the whole card */
+.card:hover .info {
+  max-width: 500px;  /* adjust width */
+  opacity: 1;
+  transform: translateX(0);
+  overflow: auto;
 }
