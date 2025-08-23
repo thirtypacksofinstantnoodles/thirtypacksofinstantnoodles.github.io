@@ -69,27 +69,3 @@ function updateCartDisplay() {
 
   document.getElementById('total-price').textContent = total.toFixed(2);
 }
-
-// ✅ Checkout button handler
-document.addEventListener('DOMContentLoaded', function () {
-  const checkoutBtn = document.getElementById('checkout-button');
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-      if (cart.length === 0) {
-        alert('Your cart is empty!');
-        return;
-      }
-
-      // ✅ DEBUG: Show cart contents before checkout
-      console.log('Cart being checked out:', cart);
-
-      // 👉 Do whatever you want with the cart here
-      // Example: send to Firebase or move to payment page
-
-      alert('Proceeding to checkout with your cart!');
-      
-      // Optional: Redirect
-      // window.location.href = 'payment.html';
-    });
-  }
-});
