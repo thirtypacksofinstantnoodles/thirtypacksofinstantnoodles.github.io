@@ -31,14 +31,14 @@
     <section>
       <h3>Ramen</h3>
 
-      <form data-name="Miso Ramen" data-price="24.90" class="menu-item">
+      <form data-name="Miso Ramen" data-price="24.90" class="order-card">
         <img src="food/misoramen.png" alt="Miso Ramen" width="200" /> <br>
         <label>Miso Ramen - RM24.90</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="3.00" value="Shoyu Tamago" id="miso-addon1">
+          <input type="checkbox" data-price="3.00" value="Shoyu Tamago" id="miso-addon1" class="add-ons">
           <label for="miso-addon1">+ Shoyu Tamago - RM3.00</label><br>
-          <input type="checkbox" data-price="1.50" value="Fishcake" id="miso-addon2">
+          <input type="checkbox" data-price="1.50" value="Fishcake" id="miso-addon2" class="add-ons">
           <label for="miso-addon2">+ Fishcake - RM1.50</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -47,14 +47,14 @@
 
       <br>
 
-      <form data-name="Tonkotsu Ramen" data-price="26.90" class="menu-item">
+      <form data-name="Tonkotsu Ramen" data-price="26.90" class="order-card">
         <img src="food/tonkotsuramen.png" alt="Tonkotsu Ramen" width="200" /> <br>
         <label>Tonkotsu Ramen - RM26.90</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="3.00" value="Shoyu Tamago" id="tonkatsu-addon1">
+          <input type="checkbox" data-price="3.00" value="Shoyu Tamago" id="tonkatsu-addon1" class="add-ons">
           <label for="tonkatsu-addon1">+ Shoyu Tamago - RM3.00</label><br>
-          <input type="checkbox" data-price="1.50" value="Fishcake" id="tonkatsu-addon2">
+          <input type="checkbox" data-price="1.50" value="Fishcake" id="tonkatsu-addon2" class="add-ons">
           <label for="tonkatsu-addon2">+ Fishcake - RM1.50</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -63,14 +63,14 @@
 
       <br>
 
-      <form data-name="Kitsune Udon" data-price="29.90" class="menu-item">
+      <form data-name="Kitsune Udon" data-price="29.90" class="order-card">
         <img src="food/kitsuneudon.png" alt="Kitsune Udon" width="200" /> <br>
         <label>Kitsune Udon - RM29.90</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="3.00" value="Shoyu Tamago" id="kitsune-addon1">
+          <input type="checkbox" data-price="3.00" value="Shoyu Tamago" id="kitsune-addon1" class="add-ons">
           <label for="kitsune-addon1">+ Shoyu Tamago - RM3.00</label><br>
-          <input type="checkbox" data-price="1.50" value="Fishcake" id="kitsune-addon2">
+          <input type="checkbox" data-price="1.50" value="Fishcake" id="kitsune-addon2" class="add-ons">
           <label for="kitsune-addon2">+ Fishcake - RM1.50</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -85,14 +85,14 @@
     <section>
       <h3>Spaghetti</h3>
 
-      <form data-name="Spaghetti Bolognese" data-price="27.90" class="menu-item">
+      <form data-name="Spaghetti Bolognese" data-price="27.90" class="order-card">
         <img src="food/spaghettibolognese.png" alt="Spaghetti Bolognese" width="200" /> <br>
         <label>Spaghetti Bolognese - RM27.90</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="3.00" value="Extra Cheese" id="spaghetti1-addon1">
+          <input type="checkbox" data-price="3.00" value="Extra Cheese" id="spaghetti1-addon1" class="add-ons">
           <label for="spaghetti1-addon1">+ Extra Cheese - RM3.00</label><br>
-          <input type="checkbox" data-price="2.00" value="Croutons" id="spaghetti1-addon2">
+          <input type="checkbox" data-price="2.00" value="Croutons" id="spaghetti1-addon2" class="add-ons">
           <label for="spaghetti1-addon2">+ Croutons - RM2.00</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -100,14 +100,14 @@
       </form>
       <br>
 
-      <form data-name="Aglio Olio" data-price="25.50" class="menu-item">
+      <form data-name="Aglio Olio" data-price="25.50" class="order-card">
         <img src="food/aglioolio.png" alt="Aglio Olio" width="200" /> <br>
         <label>Aglio Olio - RM25.50</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="3.00" value="Extra Cheese" id="spaghetti2-addon1">
+          <input type="checkbox" data-price="3.00" value="Extra Cheese" id="spaghetti2-addon1" class="add-ons">
           <label for="spaghetti2-addon1">+ Extra Cheese - RM3.00</label><br>
-          <input type="checkbox" data-price="2.00" value="Croutons" id="spaghetti2-addon2">
+          <input type="checkbox" data-price="2.00" value="Croutons" id="spaghetti2-addon2" class="add-ons">
           <label for="spaghetti2-addon2">+ Croutons - RM2.00</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -115,14 +115,14 @@
       </form>
       <br>
 
-      <form data-name="Spaghetti Carbonara" data-price="26.60" class="menu-item">
+      <form data-name="Spaghetti Carbonara" data-price="26.60" class="order-card">
         <img src="food/spaghetticarbonara.png" alt="Spaghetti Carbonara" width="200" /> <br>
         <label>Spaghetti Carbonara - RM26.60</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="3.00" value="Extra Cheese" id="spaghetti3-addon1">
+          <input type="checkbox" data-price="3.00" value="Extra Cheese" id="spaghetti3-addon1" class="add-ons">
           <label for="spaghetti3-addon1">+ Extra Cheese - RM3.00</label><br>
-          <input type="checkbox" data-price="2.00" value="Croutons" id="spaghetti3-addon2">
+          <input type="checkbox" data-price="2.00" value="Croutons" id="spaghetti3-addon2" class="add-ons">
           <label for="spaghetti3-addon2">+ Croutons - RM2.00</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -135,14 +135,14 @@
     <section>
       <h3>Classic Instant Noodles</h3>
 
-      <form data-name="Tomato Instant Noodles" data-price="19.99" class="menu-item">
+      <form data-name="Tomato Instant Noodles" data-price="19.99" class="order-card">
         <img src="food/tomatoinstantnoodles.png" alt="Tomato Instant Noodles" width="200" /> <br>
         <label>Tomato Instant Noodles - RM19.99</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant1-addon1">
+          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant1-addon1" class="add-ons">
           <label for="instant1-addon1">+ Extra Seasoning - RM2.00</label><br>
-          <input type="checkbox" data-price="4.00" value="One Egg" id="instant1-addon2">
+          <input type="checkbox" data-price="4.00" value="One Egg" id="instant1-addon2" class="add-ons">
           <label for="instant1-addon2">+ One Egg - RM4.00</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -150,14 +150,14 @@
       </form>
       <br>
 
-      <form data-name="Prawn Noodles" data-price="29.90" class="menu-item">
+      <form data-name="Prawn Noodles" data-price="29.90" class="order-card">
         <img src="food/prawnnoodles.png" alt="Prawn Noodles" width="200" /> <br>
         <label>Prawn Noodles - RM29.90</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant2-addon1">
+          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant2-addon1" class="add-ons">
           <label for="instant2-addon1">+ Extra Seasoning - RM2.00</label><br>
-          <input type="checkbox" data-price="4.00" value="One Egg" id="instant2-addon2">
+          <input type="checkbox" data-price="4.00" value="One Egg" id="instant2-addon2" class="add-ons">
           <label for="instant2-addon2">+ One Egg - RM4.00</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -165,14 +165,14 @@
       </form>
       <br>
 
-      <form data-name="Over Baked Chicken Cheesy Noodles" data-price="26.99" class="menu-item">
+      <form data-name="Over Baked Chicken Cheesy Noodles" data-price="26.99" class="order-card">
         <img src="food/overbakedchickencheesynoodles.jpg" alt="Over Baked Chicken Cheesy Noodles" width="200" /> <br>
         <label>Over Baked Chicken Cheesy Noodles - RM26.99</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant3-addon1">
+          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant3-addon1" class="add-ons">
           <label for="instant3-addon1">+ Extra Seasoning - RM2.00</label><br>
-          <input type="checkbox" data-price="4.00" value="One Egg" id="instant3-addon2">
+          <input type="checkbox" data-price="4.00" value="One Egg" id="instant3-addon2" class="add-ons">
           <label for="instant3-addon2">+ One Egg - RM4.00</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -180,14 +180,14 @@
       </form>
       <br>
 
-      <form data-name="Traditional Cup Instant Noodles" data-price="6.90" class="menu-item">
+      <form data-name="Traditional Cup Instant Noodles" data-price="6.90" class="order-card">
         <img src="food/traditionalcupinstantnoodles.jpg" alt="Traditional Cup Instant Noodles" width="200" /> <br>
         <label>Traditional Cup Instant Noodles - RM6.90</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <div class="extras">
-          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant4-addon1">
+          <input type="checkbox" data-price="2.00" value="Extra Seasoning" id="instant4-addon1" class="add-ons">
           <label for="instant4-addon1">+ Extra Seasoning - RM2.00</label><br>
-          <input type="checkbox" data-price="4.00" value="One Egg" id="instant4-addon2">
+          <input type="checkbox" data-price="4.00" value="One Egg" id="instant4-addon2" class="add-ons">
           <label for="instant4-addon2">+ One Egg - RM4.00</label><br>
           <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
           <br>
@@ -199,67 +199,33 @@
     <section>
      <h3>Desserts</h3>
   
-      <form data-name="Vanilla Ice Cream" data-price="12.50" class="menu-item">
+      <form data-name="Vanilla Ice Cream" data-price="12.50" class="order-card">
         <img src="food/vanillaicecream.jpg" alt="Vanilla Ice Cream" width="200" /> <br>
         <label>Vanilla Ice Cream - RM12.50</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
+        <br>
       </form>
-      <br>
 
-      <form data-name="Chocolate Ice Cream" data-price="13.10" class="menu-item">
-        <img src="food/chocolateicecream.jpg" alt="Chocolate Ice Cream" width="200" /> <br>
-        <label>Chocolate Ice Cream - RM13.10</label><br>
+      <form data-name="Chocolate Cake" data-price="15.00" class="order-card">
+        <img src="food/chocolatecake.jpg" alt="Chocolate Cake" width="200" /> <br>
+        <label>Chocolate Cake - RM15.00</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
+        <br>
       </form>
-      <br>
 
-      <form data-name="Strawberry Ice Cream" data-price="12.70" class="menu-item">
-        <img src="food/strawberryicecream.jpg" alt="Strawberry Ice Cream" width="200" /> <br>
-        <label>Strawberry Ice Cream - RM12.70</label><br>
+      <form data-name="Fruit Tart" data-price="13.00" class="order-card">
+        <img src="food/fruittart.jpg" alt="Fruit Tart" width="200" /> <br>
+        <label>Fruit Tart - RM13.00</label><br>
         Quantity: <input type="number" value="0" min="0"><br>
         <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
+        <br>
       </form>
-      <br>
-
-      <form data-name="Vanilla Waffle" data-price="18.90" class="menu-item">
-        <img src="food/vanillawaffle.jpg" alt="Vanilla Waffle" width="200" /> <br>
-        <label>Vanilla Waffle - RM18.90</label><br>
-        Quantity: <input type="number" value="0" min="0"><br>
-        <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
-      </form>
-      <br>
-
-      <form data-name="Chocolate Waffle" data-price="20.20" class="menu-item">
-        <img src="food/chocolatewaffle.jpg" alt="Chocolate Waffle" width="200" /> <br>
-        <label>Chocolate Waffle - RM20.20</label><br>
-        Quantity: <input type="number" value="0" min="0"><br>
-        <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
-      </form>
-      <br>
-
-      <form data-name="Strawberry Waffle" data-price="19.99" class="menu-item">
-        <img src="food/strawberrywaffle.jpg" alt="Strawberry Waffle" width="200" /> <br>
-        <label>Strawberry Waffle - RM19.99</label><br>
-        Quantity: <input type="number" value="0" min="0"><br>
-        <button type="button" onclick="addToCart(this.form)">Add to Cart</button>
-      </form>
-      <br>
     </section>
+
   </main>
 
-  <footer>
-    <div id="cart">
-      <h2>Your Cart</h2>
-      <ul id="cart-items"></ul>
-      <p><strong>Total: RM <span id="total-price">0.00</span></strong></p>
-      <button onclick="checkout()">Checkout</button>
-    </div>
-  </footer>
-
-  <script src="ordercart.js"></script>
-  <script src="orderfirebase.js"></script>
-
+  <script src="order.js"></script>
 </body>
 </html>
