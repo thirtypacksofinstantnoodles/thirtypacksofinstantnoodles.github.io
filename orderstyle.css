@@ -80,6 +80,8 @@ header h2 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-sizing: border-box;
+  margin: 15px;
 }
 
 .order-card img {
@@ -87,8 +89,9 @@ header h2 {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
+
 
 .order-card label {
   font-weight: bold;
