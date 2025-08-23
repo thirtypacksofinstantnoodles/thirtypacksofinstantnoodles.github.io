@@ -182,4 +182,23 @@ html, body {
   .media { height: 220px; }
   .desc { max-height: none; opacity: 1; transform: none; transition: none; }
 }
-message
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile: single column */
+  gap: 28px;
+}
+
+@media (min-width: 960px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr); /* desktop: 2 columns */
+    gap: 36px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on big monitors */
+  }
+}
