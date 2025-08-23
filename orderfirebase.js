@@ -17,15 +17,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 console.log("✅ Firebase initialized");
 
-// Load cart from localStorage
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
 document.addEventListener('DOMContentLoaded', () => {
   const checkoutButton = document.getElementById('checkout-button');
 
-  checkoutButton.addEventListener('click', async () => {
-    // Update cart from localStorage just before checkout
-    cart = JSON.parse(localStorage.getItem('cart')) || [];
+  checkoutButton.addEventListener('click', async (event) => {
+    event.preventDefault(); // Prevent default navigation for safety
+
+    // Load the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     if (cart.length === 0) {
       alert("Your cart is empty. Please add items before checking out.");
@@ -49,10 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Clear UI and cart
       document.getElementById('cart-items').innerHTML = '';
       document.getElementById('total-price').textContent = '0.00';
-      cart = [];
       localStorage.removeItem('cart');
 
-      // Redirect to payment
+      // Redirect to payment page
       window.location.href = "payment.html";
 
     } catch (error) {
