@@ -1,4 +1,3 @@
-// cart.js
 let cart = [];
 
 function addToCart(form) {
