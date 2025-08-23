@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyBtJnZ7ZK8JW1FH6gd1SPKJoJXJMSgzpM4",
   authDomain: "instant-noodles-a8c7d.firebaseapp.com",
@@ -11,45 +12,26 @@ const firebaseConfig = {
   measurementId: "G-T6L1X7NGGD"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 console.log("✅ Firebase initialized");
 
 document.addEventListener('DOMContentLoaded', () => {
   const checkoutButton = document.getElementById('checkout-button');
 
   checkoutButton.addEventListener('click', async () => {
-    const cartItemsElement = document.getElementById('cart-items');
-    const cartItems = [];
-
-    cartItemsElement.querySelectorAll('li').forEach(itemElement => {
-      const text = itemElement.textContent.trim();
-      const match = text.match(/(.+?)\sx(\d+)(?:\s\(\+(.+)\))?\s-\sRM(\d+\.\d{2})/);
-
-      if (match) {
-        const name = match[1].trim();
-        const quantity = parseInt(match[2]);
-        const addonsText = match[3];
-        const addons = addonsText ? addonsText.split(',').map(a => a.trim()) : [];
-        const price = parseFloat(match[4]);
-
-        cartItems.push({ name, quantity, addons, price });
-      }
-    });
-
-    const totalPriceElement = document.getElementById('total-price');
-    const totalPrice = parseFloat(totalPriceElement.textContent);
-
-    if (cartItems.length === 0) {
+    if (cart.length === 0) {
       alert("Your cart is empty. Please add items before checking out.");
       return;
     }
 
+    const totalPrice = parseFloat(document.getElementById('total-price').textContent);
+
     const orderData = {
-      items: cartItems,
+      items: [...cart],
       totalPrice: totalPrice,
-      totalItems: cartItems.reduce((sum, item) => sum + item.quantity, 0),
+      totalItems: cart.reduce((sum, item) => sum + item.quantity, 0),
       timestamp: new Date()
     };
 
@@ -58,11 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log("✅ Order submitted with ID:", docRef.id);
       alert("Thank you for your order!");
 
-      // Optional: clear cart
+      // Clear UI and cart
       document.getElementById('cart-items').innerHTML = '';
       document.getElementById('total-price').textContent = '0.00';
+      cart = []; // Clear in-memory cart too
 
-      // ✅ Redirect to payment page
+      // Redirect to payment
       window.location.href = "payment.html";
 
     } catch (error) {
