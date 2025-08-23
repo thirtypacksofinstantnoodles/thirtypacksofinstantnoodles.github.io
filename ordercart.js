@@ -1,4 +1,6 @@
-let cart = [];
+// Load cart from localStorage or initialize empty
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+updateCartDisplay();
 
 function addToCart(form) {
   const itemName = form.getAttribute('data-name');
@@ -22,7 +24,7 @@ function addToCart(form) {
   // Check if item with same addons already exists
   let found = cart.find(item =>
     item.name === itemName &&
-    JSON.stringify(item.addons.sort()) === JSON.stringify(addons.sort())
+    JSON.stringify(item.addons.slice().sort()) === JSON.stringify(addons.slice().sort())
   );
 
   if (found) {
@@ -38,6 +40,10 @@ function addToCart(form) {
   }
 
   updateCartDisplay();
+
+  // Reset form inputs after adding
+  form.querySelector('input[type="number"]').value = 0;
+  form.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
 }
 
 function removeFromCart(index) {
@@ -68,4 +74,7 @@ function updateCartDisplay() {
   });
 
   document.getElementById('total-price').textContent = total.toFixed(2);
+
+  // Save updated cart to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
